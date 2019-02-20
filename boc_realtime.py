@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+#!/usr/local/bin/python3
 # -*- coding: utf-8 -*- 
 
 import time
@@ -14,7 +14,7 @@ error_times=0
 sleeptime=120
 print("-------------------------------------------------")
 print("| 中行外汇牌价监视器 | Made by Bob | 2018.09.19 |")
-print("-------------------------------------------------")
+print("-------------------------------------------------\n")
 
 fex = input("请选择要抓取的外汇种类:\n1.英镑(默认)\n2.美元\n3.澳元\n4.欧元\n")
 
@@ -108,5 +108,5 @@ try:
 	sleeptimeget(sleeptime)
 	getrate(last_time,last_rate,error_times,sleeptime,fex_sl,fex_name)
 except KeyboardInterrupt:
-	print("\n用户中止程序")
+	print("\n手动中止程序!")
 

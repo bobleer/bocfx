@@ -1,3 +1,4 @@
+An package for getting foreign exchange rate from Bank of China.
 
 ## Installation
 

@@ -48,7 +48,7 @@ pip3 install bocfx
 ###### As stand-alone	 application
 
 ```
-bocfx -f -s -t -p -c -o
+bocfx {-f|--fx} {-s|--sort} {-t|--time} {-p|--plot} {-c|--csv} {-o|--op}
 ```
 
 Example 01:

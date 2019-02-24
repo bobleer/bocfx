@@ -91,7 +91,7 @@ Parameter | Currency | Country (Region) | Fault-tolerant
 
 ###### Example 01:
 
-```Bash
+```
 ❯ bocfx -f GBP,USD,AUD -s ASK -t 30 -p -c -o '~/desktop/output'
 100%|█████████████████████████████████████████████| 3/3 [00:03<00:00,  1.08s/it]
 100%|████████████████████████████████████████| 199/199 [00:00<00:00, 422.62it/s]

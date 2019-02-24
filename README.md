@@ -12,7 +12,7 @@ pip3 install bocfx
 ```
 
 ## Basic Usage
-###### As stand-alone	 application
+#### As stand-alone	 application
 
 ```
 ~
@@ -35,9 +35,9 @@ pip3 install bocfx
 ❯ 
 ```
 
-###### As module
+#### As module
 
-```
+```python
 >>> from bocfx import bocfx
 
 >>> output = bocfx()
@@ -48,15 +48,15 @@ pip3 install bocfx
 ```
 
 ## Advanced Usage
-###### As stand-alone	 application
+#### As stand-alone	 application
 
-```
+```Bash
 bocfx {-f|--fx} {-s|--sort} {-t|--time} {-p|--plot} {-c|--csv} {-o|--op}
 ```
 
-Example 01:
+###### Example 01:
 
-```
+```Bash
 ❯ bocfx -f GBP,USD,AUD -s ASK -t 30 -p -c -o '~/desktop/output'
 100%|█████████████████████████████████████████████| 3/3 [00:03<00:00,  1.08s/it]
 100%|████████████████████████████████████████| 199/199 [00:00<00:00, 422.62it/s]
@@ -83,9 +83,9 @@ Plot has already saved to /Users/bob/desktop/output/[GBP+USD+AUD]SE_ASK+BN_ASK_2
 ```
 ![](https://github.com/bobleer/bocfx/raw/master/images/%5BGBP%2BUSD%2BAUD%5DSE_ASK%2BBN_ASK_2019-01-25_2019-02-24.png)
 
-###### As module
+#### As module
 
-```
+```python
 from bocfx import bocfx
 
 bocfx(FX=0, sort=0, time=-1, plot=0, csv=0, pt=0, op='~/bocfx_output')

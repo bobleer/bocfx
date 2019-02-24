@@ -85,7 +85,7 @@ Plot has already saved to /Users/bob/desktop/output/[GBP+USD+AUD]SE_ASK+BN_ASK_2
 ```
 from bocfx import bocfx
 
-bocfx(FX=0, sort=0, time=-1, plot=0, csv=0, pt=0, op='~/bocfx')
+bocfx(FX=0, sort=0, time=-1, plot=0, csv=0, pt=0, op='~/bocfx_output')
 ```
 
 ## MIT Licence

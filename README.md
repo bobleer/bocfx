@@ -1,5 +1,5 @@
 # bocfx
-An package for getting foreign exchange rate from Bank of China.
+An package for getting foreign exchange rate from Bank of China (BOC).
 
 
 ## Installation
@@ -12,7 +12,7 @@ pip3 install bocfx
 ```
 
 ## Basic Usage
-#### As stand-alone	 application
+#### As command-line application
 
 ```
 ~
@@ -35,7 +35,7 @@ pip3 install bocfx
 ❯ 
 ```
 
-#### As module
+#### As python module
 
 ```python
 >>> from bocfx import bocfx
@@ -48,11 +48,46 @@ pip3 install bocfx
 ```
 
 ## Advanced Usage
-#### As stand-alone	 application
+#### As command-line application
 
 ```Bash
 bocfx {-f|--fx} {-s|--sort} {-t|--time} {-p|--plot} {-c|--csv} {-o|--op}
 ```
+
+`-f`/`--fx` is the BOC foreign excahnge selector. This opinion supports multi-parameter.
+
+`,` is the separator of each parameter.
+
+Common foreign currency:
+
+Parameter | Currency | Country (Region) | Fault-tolerant
+:-|:-|:-|:-
+`GBP` | Pound | The United Kingdom | `gbp`/`UK`/`uk`
+`EUR` | Euro | European Union | `eur`/`EU`/`eu`
+`USD` | Dollar | The United States | `usd`/`USA`/`usa`/`US`/`us`
+`CAD` | Canadian Dollar | Canada | `cad`/`CA`/`ca`
+`AUD` | Australian Dollar | Australia | `aud`/`AU`/`au`
+`RUB` | Russian Ruble | Russia | `rub`/`RU`/`ru`
+`HKD` | Hong Kong Dollar | Hong Kong | `hdk`/`HK`/`hk`
+`MOP` | Macao Pataca | Macao | `mop`
+`NTD` | New Taiwan Dollar | Taiwan | `ntd`/`TW`/`tw`
+`JPY` | Japanese Yen | Japan | `jpy`/`JP`/`jp`/`Yen`
+`KRW` | South Korean Won | South Korean | `krw`/`KR`/`kr`
+`THB` | Thai Baht | Thailand | `thb`/`Thai`
+`PHP` | Philippine Peso | Philippines | `php`/`Peso`
+`MYR` | Malaysian Ringgit | Malaysia | `myr`/`Sen`
+`SGD` | Singapore Dollar | Singapore | `sgd`
+`NZD` | New Zealand Dollar | New Zealand | `nzd`/`Kiwi`
+`INR` | Indian Rupee | India | `inr`
+`TRY` | Turkish Lira | Turkey | `try`/`YTL`/`ytl`
+`BRL` | Brazilian Real | Brazil | `brl`
+`IDR` | Indonesian Rupiah | Indonesia | `idr`
+`ZAR` | South African Rand | South Africa | `zar`
+`AED` | United Arab Emirates Dirham | United Arab Emirates | `aed`
+`SAR` | Saudi Riyal | Saudi Arabia | `sar`
+
+
+
 
 ###### Example 01:
 
@@ -83,7 +118,7 @@ Plot has already saved to /Users/bob/desktop/output/[GBP+USD+AUD]SE_ASK+BN_ASK_2
 ```
 ![](https://github.com/bobleer/bocfx/raw/master/images/%5BGBP%2BUSD%2BAUD%5DSE_ASK%2BBN_ASK_2019-01-25_2019-02-24.png)
 
-#### As module
+#### As python module
 
 ```python
 from bocfx import bocfx

@@ -41,7 +41,7 @@ pip3 install bocfx
 
 #### As python module
 
-```python
+```
 >>> from bocfx import bocfx
 
 >>> output = bocfx('GBP,USD','SE,ASK')

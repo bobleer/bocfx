@@ -1,12 +1,19 @@
 # bocfx
 A python package for getting foreign exchange rate from Bank of China (BOC).
 
+## Features
+
+1. Foreign exchange selection.
+2. Foreign exchange quotation filter.
+3. Date selection.
+4. Line graph output.
+5. .csv output.
 
 ## Installation
 
 ```
 ### Required packages
-# pip3 install -U requests scrapy tqdm prettytable numpy matplotlib
+### pip3 install -U requests scrapy tqdm prettytable numpy matplotlib
 
 pip3 install bocfx
 ```
@@ -40,7 +47,7 @@ pip3 install bocfx
 >>> output = bocfx('GBP,USD','SE,ASK')
 100%|████████████████████████████████████████████| 5/5 [00:00<00:00, 532.87it/s]
 
->>> output
+>>> output # Latest foreign exchange rate
 ['879.96', '672.28']
 ```
 
@@ -93,8 +100,6 @@ bocfx(FX=0, sort=0, time=-1, plot=0, csv=0, pt=0, op='~/bocfx_output')
 ```
 >>> from bocfx import bocfx
 
-##### example01 #####
-
 ### Equivalent command
 ### example01 = bocfx(FX='GBP,USD', sort='SE', time=1)
 >>> example01 = bocfx('GBP,USD','SE',1)
@@ -104,8 +109,10 @@ bocfx(FX=0, sort=0, time=-1, plot=0, csv=0, pt=0, op='~/bocfx_output')
 <class 'list'>
 >>> print(example01)
 [[2, 'SE_BID', 'SE_ASK', 'Time'], ['USD', '669.74', '672.58', '2019-02-25 09:25:23'], ['GBP', '874.18', '880.62', '2019-02-25 09:25:13'], ... , ['GBP', '873.83', '880.27', '2019-02-24 00:00:05'], ['USD', '670.24', '673.08', '2019-02-24 00:00:05']]
+```
 
-##### example02 #####
+```
+>>> from bocfx import bocfx
 
 ### Equivalent command
 ### example02 = bocfx(FX='GBP,USD', sort='SE', time='2018-08-01,2018-08-02', plot=1, csv=1, pt=0, op='~/desktop/example/')

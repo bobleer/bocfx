@@ -22,8 +22,7 @@ pip3 install bocfx
 #### As command-line application
 
 ```
-~
-❯ bocfx                        
+BOBMAC:~ bobleer$ bocfx                        
 100%|████████████████████████████████████████████| 5/5 [00:00<00:00, 471.66it/s]
 
 +-----+--------+--------+--------+--------+---------------------+
@@ -36,7 +35,6 @@ pip3 install bocfx
 | AUD | 476.19 | 461.4  | 479.69 | 480.87 | 2019-02-25 10:10:35 |
 +-----+--------+--------+--------+--------+---------------------+
 (SE = Spot Exchange, BN = Banknote)
-
 ```
 
 #### As python module
@@ -196,7 +194,6 @@ If not using this option, the default parameters will be `GBP,EUR,USD,CAD,AUD`.
 | USD | 670.24 | 664.79 | 673.08 | 673.08 | 2019-02-25 07:28:17 |
 +-----+--------+--------+--------+--------+---------------------+
 (SE = Spot Exchange, BN = Banknote)
-
 ```
 
 #### Option 2 `-s`/`--sort`
@@ -236,7 +233,6 @@ If not using this option, the default output will include all prices.
 | USD | 670.24 | 2019-02-25 08:35:54 |
 +-----+--------+---------------------+
 (SE = Spot Exchange, BN = Banknote)
-
 ```
 
 #### Option 3 `-t`/`--time`

@@ -25,7 +25,7 @@ def asexec():
 
 	for opt, arg in opts:
 		if opt in ('-h','--help'):
-			print("HELP!")
+			print("A python package for getting foreign exchange rate from Bank of China (BOC).\nGet detailed help from https://github.com/bobleer/bocfx")
 			sys.exit()
 
 		elif opt in ('-f','--FX'):

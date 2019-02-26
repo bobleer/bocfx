@@ -326,7 +326,7 @@ Example: `-o '~/desktop/example/'`
 
 This package is no-database design. All of data are from http://srh.bankofchina.com/search/whpj/search.jsp
 
-**The spider speed will be strongly influenced by the connectation quality.**
+**The speed of spider will be strongly influenced by the connectation quality.**
 <br>
 <br>
 <br>

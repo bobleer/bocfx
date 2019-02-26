@@ -318,7 +318,7 @@ There are 3 ways to write parameter.
  2 | `2019-02-20` | Get data from 2019-02-20 to today
  3 | `2019-02-20,2019-02-21` | Get data from 2019-02-20 to 2019-02-21
  
-If not using this option, **only the latest data** will be output.
+If not using this option, **only the latest quotation** will be output.
 <br>
 <br>
 <br>

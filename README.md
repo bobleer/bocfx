@@ -1,5 +1,7 @@
 # bocfx
 A python package for getting foreign exchange rate from Bank of China (BOC).
+<br>
+<br>
 
 ## Features
 
@@ -8,6 +10,8 @@ A python package for getting foreign exchange rate from Bank of China (BOC).
 3. Date selection.
 4. Line graph output.
 5. .csv output.
+<br>
+<br>
 
 ## Installation
 
@@ -17,8 +21,12 @@ A python package for getting foreign exchange rate from Bank of China (BOC).
 
 pip3 install bocfx
 ```
+<br>
+<br>
 
 ## Basic Usage
+<br>
+
 #### As command-line application
 
 ```
@@ -36,6 +44,8 @@ BOBMAC:~ bobleer$ bocfx
 +-----+--------+--------+--------+--------+---------------------+
 (SE = Spot Exchange, BN = Banknote)
 ```
+<br>
+<br>
 
 #### As python module
 
@@ -48,13 +58,19 @@ BOBMAC:~ bobleer$ bocfx
 >>> output # Latest foreign exchange rate
 ['879.96', '672.28']
 ```
+<br>
+<br>
 
 ## Advanced Usage
+<br>
+
 #### As command-line application
 
 ```Bash
 bocfx [-f|--fx] [-s|--sort] [-t|--time] (-p|--plot) (-c|--csv) {-o|--op}
 ```
+<br>
+<br>
 
 ###### Example:
 
@@ -84,6 +100,8 @@ bocfx [-f|--fx] [-s|--sort] [-t|--time] (-p|--plot) (-c|--csv) {-o|--op}
 Plot has already saved to /Users/bob/desktop/output/[GBP+USD+AUD]SE_ASK+BN_ASK_2019-01-25_2019-02-24.png
 ```
 ![](https://github.com/bobleer/bocfx/raw/master/images/%5BGBP%2BUSD%2BAUD%5DSE_ASK%2BBN_ASK_2019-01-25_2019-02-24.png)
+<br>
+<br>
 
 #### As python module
 
@@ -92,6 +110,8 @@ from bocfx import bocfx
 
 bocfx(FX=0, sort=0, time=-1, plot=0, csv=0, pt=0, op='~/bocfx_output')
 ```
+<br>
+<br>
 
 ###### Example:
 
@@ -129,8 +149,12 @@ Plot has already saved to /Users/bob/desktop/example/[GBP+USD]SE_BID+SE_ASK_2018
 ```
 
 ![](https://github.com/bobleer/bocfx/raw/master/images/%5BGBP%2BUSD%5DSE_BID%2BSE_ASK_2018-08-01_2018-08-02.png)
+<br>
+<br>
 
 ## Option and parameter
+<br>
+
 #### Option 1 `-f`/`--fx`
 
 `-f`/`--fx` is the BOC foreign excahnge selector. This opinion supports **multi-parameter**.
@@ -167,6 +191,7 @@ Parameter | Currency | Country (Region) | Fault-tolerant
 
 If not using this option, the default parameters will be `GBP,EUR,USD,CAD,AUD`.
 
+Example:
 ```
 ~
 ❯ bocfx            
@@ -195,6 +220,8 @@ If not using this option, the default parameters will be `GBP,EUR,USD,CAD,AUD`.
 +-----+--------+--------+--------+--------+---------------------+
 (SE = Spot Exchange, BN = Banknote)
 ```
+<br>
+<br>
 
 #### Option 2 `-s`/`--sort`
 
@@ -209,6 +236,7 @@ If not using this option, the default parameters will be `GBP,EUR,USD,CAD,AUD`.
 
 If not using this option, the default output will include all prices.
 
+Example:
 ```
 ~
 ❯ bocfx -f GBP,USD -s ASK                                  
@@ -234,6 +262,8 @@ If not using this option, the default output will include all prices.
 +-----+--------+---------------------+
 (SE = Spot Exchange, BN = Banknote)
 ```
+<br>
+<br>
 
 #### Option 3 `-t`/`--time`
 
@@ -248,30 +278,40 @@ There are 3 ways to write parameter.
  3 | `2019-02-20,2019-02-21` | Get data from 2019-02-20 to 2019-02-21
  
 If not using this option, **only the latest data** will be output.
+<br>
+<br>
 
 #### Option 4 `-p`/`--plot`
 
 Using `-p`/`--plot` can generate a line graph with .png format.
 
 The default output path is `~/bocfx_output/`
+<br>
+<br>
 
 #### Option 5 `-c`/`--csv`
 
 Using `-p`/`--plot` can output data in .csv format.
 
 The default output path is `~/bocfx_output/`
+<br>
+<br>
 
 #### Option 6 `-o`/`--op`
 
 Using `-o`/`--op` can change default output path.
 
 Example: `-o '~/desktop/example/'`
+<br>
+<br>
 
 ## Limitation
 
 This package is no-database design. All of data are from http://srh.bankofchina.com/search/whpj/search.jsp
 
 **The spider speed will be strongly influenced by the connectation quality.**
+<br>
+<br>
 
 ## MIT Licence
 

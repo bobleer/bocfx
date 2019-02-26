@@ -14,6 +14,8 @@ A python package for getting foreign exchange rate from Bank of China (BOC).
 * [x] **.csv generation.**
 <br>
 
+# Contents
+
 - [Installation](#installation)
 - [Basic Usage](#basic-usage)
 	- [As command-line application](#as-command-line-application)

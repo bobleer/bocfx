@@ -294,6 +294,7 @@ There are 3 ways to write parameter.
 If not using this option, **only the latest data** will be output.
 <br>
 <br>
+<br>
 
 ## Option 4 `-p`/`--plot`
 
@@ -302,12 +303,14 @@ Using `-p`/`--plot` can generate a line graph with .png format.
 The default output path is `~/bocfx_output/`
 <br>
 <br>
+<br>
 
 ## Option 5 `-c`/`--csv`
 
 Using `-p`/`--plot` can output data in .csv format.
 
 The default output path is `~/bocfx_output/`
+<br>
 <br>
 <br>
 
@@ -324,6 +327,7 @@ Example: `-o '~/desktop/example/'`
 This package is no-database design. All of data are from http://srh.bankofchina.com/search/whpj/search.jsp
 
 **The spider speed will be strongly influenced by the connectation quality.**
+<br>
 <br>
 <br>
 

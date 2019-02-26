@@ -3,7 +3,7 @@ A python package for getting foreign exchange rate from Bank of China (BOC).
 <br>
 <br>
 
-## Features
+# Features
 
 1. Foreign exchange selection.
 2. Foreign exchange quotation filter.
@@ -13,7 +13,7 @@ A python package for getting foreign exchange rate from Bank of China (BOC).
 <br>
 <br>
 
-## Installation
+# Installation
 
 ```
 ### Required packages
@@ -24,10 +24,10 @@ pip3 install bocfx
 <br>
 <br>
 
-## Basic Usage
+# Basic Usage
 <br>
 
-#### As command-line application
+## As command-line application
 
 ```
 BOBMAC:~ bobleer$ bocfx                        
@@ -47,7 +47,7 @@ BOBMAC:~ bobleer$ bocfx
 <br>
 <br>
 
-#### As python module
+## As python module
 
 ```
 >>> from bocfx import bocfx
@@ -61,10 +61,10 @@ BOBMAC:~ bobleer$ bocfx
 <br>
 <br>
 
-## Advanced Usage
+# Advanced Usage
 <br>
 
-#### As command-line application
+## As command-line application
 
 ```Bash
 bocfx [-f|--fx] [-s|--sort] [-t|--time] (-p|--plot) (-c|--csv) {-o|--op}
@@ -72,7 +72,7 @@ bocfx [-f|--fx] [-s|--sort] [-t|--time] (-p|--plot) (-c|--csv) {-o|--op}
 <br>
 <br>
 
-###### Example:
+#### Example:
 
 ```
 ❯ bocfx -f GBP,USD,AUD -s ASK -t 30 -p -c -o '~/desktop/output'
@@ -103,7 +103,7 @@ Plot has already saved to /Users/bob/desktop/output/[GBP+USD+AUD]SE_ASK+BN_ASK_2
 <br>
 <br>
 
-#### As python module
+## As python module
 
 ```python
 from bocfx import bocfx
@@ -113,7 +113,7 @@ bocfx(FX=0, sort=0, time=-1, plot=0, csv=0, pt=0, op='~/bocfx_output')
 <br>
 <br>
 
-###### Example:
+#### Example:
 
 ```
 >>> from bocfx import bocfx
@@ -152,10 +152,10 @@ Plot has already saved to /Users/bob/desktop/example/[GBP+USD]SE_BID+SE_ASK_2018
 <br>
 <br>
 
-## Option and parameter
+# Option and parameter
 <br>
 
-#### Option 1 `-f`/`--fx`
+## Option 1 `-f`/`--fx`
 
 `-f`/`--fx` is the BOC foreign excahnge selector. This opinion supports **multi-parameter**.
 
@@ -223,7 +223,7 @@ Example:
 <br>
 <br>
 
-#### Option 2 `-s`/`--sort`
+## Option 2 `-s`/`--sort`
 
 `-s`/`--sort` is the filter of foreign exchange quotation. This opinion supports **multi-parameter**.
 
@@ -265,7 +265,7 @@ Example:
 <br>
 <br>
 
-#### Option 3 `-t`/`--time`
+## Option 3 `-t`/`--time`
 
 `-t`/`--time` can filter the date of foreign exchange quotation.
 
@@ -281,7 +281,7 @@ If not using this option, **only the latest data** will be output.
 <br>
 <br>
 
-#### Option 4 `-p`/`--plot`
+## Option 4 `-p`/`--plot`
 
 Using `-p`/`--plot` can generate a line graph with .png format.
 
@@ -289,7 +289,7 @@ The default output path is `~/bocfx_output/`
 <br>
 <br>
 
-#### Option 5 `-c`/`--csv`
+## Option 5 `-c`/`--csv`
 
 Using `-p`/`--plot` can output data in .csv format.
 
@@ -297,7 +297,7 @@ The default output path is `~/bocfx_output/`
 <br>
 <br>
 
-#### Option 6 `-o`/`--op`
+## Option 6 `-o`/`--op`
 
 Using `-o`/`--op` can change default output path.
 
@@ -305,7 +305,7 @@ Example: `-o '~/desktop/example/'`
 <br>
 <br>
 
-## Limitation
+# Limitation
 
 This package is no-database design. All of data are from http://srh.bankofchina.com/search/whpj/search.jsp
 
@@ -313,7 +313,7 @@ This package is no-database design. All of data are from http://srh.bankofchina.
 <br>
 <br>
 
-## MIT Licence
+# MIT Licence
 
 Copyright (c) 2018 The Python Packaging Authority
 

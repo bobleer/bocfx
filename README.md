@@ -28,6 +28,8 @@ A python package for getting foreign exchange rate from Bank of China (BOC).
 
 # Features
 
+- [x] **As command-line application**
+- [x] **As python module**
 - [x] **Foreign exchange selection.**
 - [x] **Foreign exchange quotation filter.**
 - [x] **Date selection.**

@@ -1,6 +1,6 @@
 Metadata-Version: 2.1
 Name: bocfx
-Version: 0.6.7
+Version: 0.6.8
 Summary: Easy way to get foreign exchange rate from Bank of China.
 Home-page: https://github.com/bobleer/bocfx
 Author: bobleer
@@ -9,29 +9,61 @@ License: UNKNOWN
 Description: # bocfx
         A python package for getting foreign exchange rate from Bank of China (BOC).
         
-        ## Features
+        - [Features](#features)
+        - [Installation](#installation)
+        - [Basic Usage](#basic-usage)
+        	- [As command-line application](#as-command-line-application)
+        	- [As python module](#as-python-module)
+        - [Advanced Usage](#advanced-usage)
+        	- [As command-line application](#as-command-line-application-1)
+        		- [Example](#example)
+        	- [As python module](#as-python-module-1)
+        		- [Example](#example-1)
+        - [Option and parameter](#option-and-parameter)
+        	- [Option 1 `-f`/`--fx`](#option-1--f--fx)
+        		- [Common foreign currency:](#common-foreign-currency)
+        		- [Example](#example-2)
+        	- [Option 2 `-s`/`--sort`](#option-2--s--sort)
+        		- [Example](#example-3)
+        	- [Option 3 `-t`/`--time`](#option-3--t--time)
+        	- [Option 4 `-p`/`--plot`](#option-4--p--plot)
+        	- [Option 5 `-c`/`--csv`](#option-5--c--csv)
+        	- [Option 6 `-o`/`--op`](#option-6--o--op)
+        - [Limitation](#limitation)
+        - [MIT Licence](#mit-licence)
+        <br>
+        <br>
         
-        1. Foreign exchange selection.
-        2. Foreign exchange quotation filter.
-        3. Date selection.
-        4. Line graph output.
-        5. .csv output.
+        # Features
         
-        ## Installation
+        - [x] **As command-line application**
+        - [x] **As python module**
+        - [x] **Foreign exchange selection.**
+        - [x] **Foreign exchange quotation filter.**
+        - [x] **Date selection.**
+        - [x] **Line graph generation.**
+        - [x] **.csv generation.**
+        <br>
+        <br>
+        
+        # Installation
         
         ```
-        ### Required packages
-        ### pip3 install -U requests scrapy tqdm prettytable numpy matplotlib
+        # Required packages
+        # pip3 install -U requests scrapy tqdm prettytable numpy matplotlib
         
         pip3 install bocfx
         ```
+        <br>
+        <br>
         
-        ## Basic Usage
-        #### As command-line application
+        # Basic Usage
+        <br>
+        
+        ## As command-line application
         
         ```
-        ~
-        ❯ bocfx                        
+        BOBMAC:~ bobleer$ bocfx                        
         100%|████████████████████████████████████████████| 5/5 [00:00<00:00, 471.66it/s]
         
         +-----+--------+--------+--------+--------+---------------------+
@@ -44,10 +76,11 @@ Description: # bocfx
         | AUD | 476.19 | 461.4  | 479.69 | 480.87 | 2019-02-25 10:10:35 |
         +-----+--------+--------+--------+--------+---------------------+
         (SE = Spot Exchange, BN = Banknote)
-        
         ```
+        <br>
+        <br>
         
-        #### As python module
+        ## As python module
         
         ```
         >>> from bocfx import bocfx
@@ -58,15 +91,21 @@ Description: # bocfx
         >>> output # Latest foreign exchange rate
         ['879.96', '672.28']
         ```
+        <br>
+        <br>
         
-        ## Advanced Usage
-        #### As command-line application
+        # Advanced Usage
+        <br>
+        
+        ## As command-line application
         
         ```Bash
         bocfx [-f|--fx] [-s|--sort] [-t|--time] (-p|--plot) (-c|--csv) {-o|--op}
         ```
+        <br>
+        <br>
         
-        ###### Example:
+        #### Example:
         
         ```
         ❯ bocfx -f GBP,USD,AUD -s ASK -t 30 -p -c -o '~/desktop/output'
@@ -94,36 +133,45 @@ Description: # bocfx
         Plot has already saved to /Users/bob/desktop/output/[GBP+USD+AUD]SE_ASK+BN_ASK_2019-01-25_2019-02-24.png
         ```
         ![](https://github.com/bobleer/bocfx/raw/master/images/%5BGBP%2BUSD%2BAUD%5DSE_ASK%2BBN_ASK_2019-01-25_2019-02-24.png)
+        <br>
+        <br>
         
-        #### As python module
+        ## As python module
         
         ```python
         from bocfx import bocfx
         
         bocfx(FX=0, sort=0, time=-1, plot=0, csv=0, pt=0, op='~/bocfx_output')
         ```
+        <br>
+        <br>
         
-        ###### Example:
+        #### Example:
         
         ```
         >>> from bocfx import bocfx
         
-        ### Equivalent command
-        ### example01 = bocfx(FX='GBP,USD', sort='SE', time=1)
+        # Equivalent command
+        # example01 = bocfx(FX='GBP,USD', sort='SE', time=1)
+        
         >>> example01 = bocfx('GBP,USD','SE',1)
         100%|█████████████████████████████████████████████| 2/2 [00:01<00:00,  1.49it/s]
         
         >>> type(example01)
         <class 'list'>
+        
         >>> print(example01)
         [[2, 'SE_BID', 'SE_ASK', 'Time'], ['USD', '669.74', '672.58', '2019-02-25 09:25:23'], ['GBP', '874.18', '880.62', '2019-02-25 09:25:13'], ... , ['GBP', '873.83', '880.27', '2019-02-24 00:00:05'], ['USD', '670.24', '673.08', '2019-02-24 00:00:05']]
         ```
         
+        <br>
+        
         ```
         >>> from bocfx import bocfx
         
-        ### Equivalent command
-        ### example02 = bocfx(FX='GBP,USD', sort='SE', time='2018-08-01,2018-08-02', plot=1, csv=1, pt=0, op='~/desktop/example/')
+        # Equivalent command
+        # example02 = bocfx(FX='GBP,USD', sort='SE', time='2018-08-01,2018-08-02', plot=1, csv=1, pt=0, op='~/desktop/example/')
+        
         >>> example02 = bocfx('GBP,USD','SE','2018-08-01,2018-08-02',1,1,0,op='~/desktop/example/')
         100%|█████████████████████████████████████████████| 2/2 [00:02<00:00,  1.05it/s]
         100%|██████████████████████████████████████████| 26/26 [00:00<00:00, 134.46it/s]
@@ -134,20 +182,27 @@ Description: # bocfx
         
         >>> type(example02)
         <class 'list'>
+        
         >>> print(example02)
         [[2, 'SE_BID', 'SE_ASK', 'Time'], ['GBP', '888.85', '895.4', '2018-08-02 23:19:36'], ['USD', '683.01', '685.91', '2018-08-02 23:19:36'], ... , ['GBP', '891.33', '897.89', '2018-08-01 00:00:05'], ['USD', '680.22', '683.1', '2018-08-01 00:00:05']]
         ```
         
         ![](https://github.com/bobleer/bocfx/raw/master/images/%5BGBP%2BUSD%5DSE_BID%2BSE_ASK_2018-08-01_2018-08-02.png)
+        <br>
+        <br>
         
-        ## Option and parameter
-        #### Option 1 `-f`/`--fx`
+        # Option and parameter
+        <br>
+        
+        ## Option 1 `-f`/`--fx`
         
         `-f`/`--fx` is the BOC foreign excahnge selector. This opinion supports **multi-parameter**.
         
         `,` is the separator of each parameter.
+        <br>
+        <br>
         
-        Common foreign currency:
+        #### Common foreign currency:
         
         Parameter | Currency | Country (Region) | Fault-tolerant
         :-|:-|:-|:-
@@ -176,6 +231,10 @@ Description: # bocfx
         `SAR` | Saudi Riyal | Saudi Arabia | `sar`
         
         If not using this option, the default parameters will be `GBP,EUR,USD,CAD,AUD`.
+        <br>
+        <br>
+        
+        #### Example:
         
         ```
         ~
@@ -204,10 +263,11 @@ Description: # bocfx
         | USD | 670.24 | 664.79 | 673.08 | 673.08 | 2019-02-25 07:28:17 |
         +-----+--------+--------+--------+--------+---------------------+
         (SE = Spot Exchange, BN = Banknote)
-        
         ```
+        <br>
+        <br>
         
-        #### Option 2 `-s`/`--sort`
+        ## Option 2 `-s`/`--sort`
         
         `-s`/`--sort` is the filter of foreign exchange quotation. This opinion supports **multi-parameter**.
         
@@ -219,6 +279,10 @@ Description: # bocfx
          `ASK` Ask Price | `SE,ASK` SE_ASK | `BN,ASK` BN_ASK
         
         If not using this option, the default output will include all prices.
+        <br>
+        <br>
+        
+        #### Example:
         
         ```
         ~
@@ -244,22 +308,65 @@ Description: # bocfx
         | USD | 670.24 | 2019-02-25 08:35:54 |
         +-----+--------+---------------------+
         (SE = Spot Exchange, BN = Banknote)
-        
         ```
+        <br>
+        <br>
         
-        #### Option 3 `-t`/`--time`
+        ## Option 3 `-t`/`--time`
         
         `-t`/`--time` can filter the date of foreign exchange quotation.
         
-        `,` is the separator of each parameter.
+        There are 3 ways to write parameter.
         
+         No. | Example | Definition
+         :-|:-|:-
+         1 | `6` | Get data from 6 days ago to today
+         2 | `2019-02-20` | Get data from 2019-02-20 to today
+         3 | `2019-02-20,2019-02-21` | Get data from 2019-02-20 to 2019-02-21
+         
+        If not using this option, **only the latest data** will be output.
+        <br>
+        <br>
+        <br>
         
+        ## Option 4 `-p`/`--plot`
         
+        Using `-p`/`--plot` can generate a line graph with .png format.
         
+        The default output path is `~/bocfx_output/`
+        <br>
+        <br>
+        <br>
         
-        ## MIT Licence
+        ## Option 5 `-c`/`--csv`
         
-        Copyright (c) 2018 The Python Packaging Authority
+        Using `-p`/`--plot` can output data in .csv format.
+        
+        The default output path is `~/bocfx_output/`
+        <br>
+        <br>
+        <br>
+        
+        ## Option 6 `-o`/`--op`
+        
+        Using `-o`/`--op` can change default output path.
+        
+        Example: `-o '~/desktop/example/'`
+        <br>
+        <br>
+        
+        # Limitation
+        
+        This package is no-database design. All of data are from http://srh.bankofchina.com/search/whpj/search.jsp
+        
+        **The speed of spider will be strongly influenced by the connectation quality.**
+        <br>
+        <br>
+        <br>
+        
+        # MIT Licence
+        
+        Copyright (c) 2019 The Python Packaging Authority
         
         Permission is hereby granted, free of charge, to any person obtaining a copy
         of this software and associated documentation files (the "Software"), to deal
@@ -278,7 +385,7 @@ Description: # bocfx
         LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
         OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
         SOFTWARE.
-        
+        <br>
         
 Platform: UNKNOWN
 Classifier: Programming Language :: Python :: 3

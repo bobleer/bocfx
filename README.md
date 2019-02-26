@@ -239,11 +239,39 @@ If not using this option, the default output will include all prices.
 
 `-t`/`--time` can filter the date of foreign exchange quotation.
 
-`,` is the separator of each parameter.
+There are 3 ways to write parameter.
 
+ No. | Example | Definition
+ :-|:-|:-
+ 1 | `6` | Get data from 6 days ago to today
+ 2 | `2019-02-20` | Get data from 2019-02-20 to today
+ 3 | `2019-02-20,2019-02-21` | Get data from 2019-02-20 to 2019-02-21
+ 
+If not using this option, **only the latest data** will be output.
 
+#### Option 4 `-p`/`--plot`
 
+Using `-p`/`--plot` can generate a line graph with .png format.
 
+The default output path is `~/bocfx_output/`
+
+#### Option 5 `-c`/`--csv`
+
+Using `-p`/`--plot` can output data in .csv format.
+
+The default output path is `~/bocfx_output/`
+
+#### Option 6 `-o`/`--op`
+
+Using `-o`/`--op` can change default output path.
+
+Example: `-o '~/desktop/example/'`
+
+## Limitation
+
+This package is no-database design. All of data are from http://srh.bankofchina.com/search/whpj/search.jsp
+
+**The spider speed will be strongly influenced by the connectation quality.**
 
 ## MIT Licence
 

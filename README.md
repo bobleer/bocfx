@@ -10,7 +10,7 @@ A python package for getting foreign exchange rate from Bank of China (BOC).
 * [x] **As python module**
 * [x] **Foreign exchange selection.**
 * [x] **Foreign exchange quotation filter.**
-* [x] **Date selection.**
+* [x] **Date selection (Realtime/History).**
 * [x] **Line graph generation.**
 * [x] **.csv generation.**
 <br>

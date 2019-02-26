@@ -5,11 +5,11 @@ A python package for getting foreign exchange rate from Bank of China (BOC).
 
 # Features
 
-* **Foreign exchange selection.**
-* **Foreign exchange quotation filter.**
-* **Date selection.**
-* **Line graph output.**
-* **.csv output.**
+- [x] **Foreign exchange selection.**
+- [x] **Foreign exchange quotation filter.**
+- [x] **Date selection.**
+- [x] **Line graph generation.**
+- [x] **.csv generation.**
 <br>
 <br>
 

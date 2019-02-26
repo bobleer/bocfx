@@ -1,5 +1,5 @@
 # bocfx
-A python package for getting foreign exchange rate from Bank of China (BOC).
+An easy-to-use python package for getting foreign exchange rate from Bank of China (BOC).
 <br>
 <br>
 

@@ -39,8 +39,8 @@ A python package for getting foreign exchange rate from Bank of China (BOC).
 # Installation
 
 ```
-### Required packages
-### pip3 install -U requests scrapy tqdm prettytable numpy matplotlib
+# Required packages
+# pip3 install -U requests scrapy tqdm prettytable numpy matplotlib
 
 pip3 install bocfx
 ```
@@ -141,8 +141,8 @@ bocfx(FX=0, sort=0, time=-1, plot=0, csv=0, pt=0, op='~/bocfx_output')
 ```
 >>> from bocfx import bocfx
 
-### Equivalent command
-### example01 = bocfx(FX='GBP,USD', sort='SE', time=1)
+# Equivalent command
+# example01 = bocfx(FX='GBP,USD', sort='SE', time=1)
 
 >>> example01 = bocfx('GBP,USD','SE',1)
 100%|█████████████████████████████████████████████| 2/2 [00:01<00:00,  1.49it/s]
@@ -159,8 +159,8 @@ bocfx(FX=0, sort=0, time=-1, plot=0, csv=0, pt=0, op='~/bocfx_output')
 ```
 >>> from bocfx import bocfx
 
-### Equivalent command
-### example02 = bocfx(FX='GBP,USD', sort='SE', time='2018-08-01,2018-08-02', plot=1, csv=1, pt=0, op='~/desktop/example/')
+# Equivalent command
+# example02 = bocfx(FX='GBP,USD', sort='SE', time='2018-08-01,2018-08-02', plot=1, csv=1, pt=0, op='~/desktop/example/')
 
 >>> example02 = bocfx('GBP,USD','SE','2018-08-01,2018-08-02',1,1,0,op='~/desktop/example/')
 100%|█████████████████████████████████████████████| 2/2 [00:02<00:00,  1.05it/s]

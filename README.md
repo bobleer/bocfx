@@ -1,7 +1,20 @@
 # bocfx
 A python package for getting foreign exchange rate from Bank of China (BOC).
+<br>
+<br>
 
-- [Features](#features)
+# Features
+
+* [x] **As command-line application**
+* [x] **As python module**
+* [x] **Foreign exchange selection.**
+* [x] **Foreign exchange quotation filter.**
+* [x] **Date selection.**
+* [x] **Line graph generation.**
+* [x] **.csv generation.**
+<br>
+<br>
+
 - [Installation](#installation)
 - [Basic Usage](#basic-usage)
 	- [As command-line application](#as-command-line-application)
@@ -23,18 +36,6 @@ A python package for getting foreign exchange rate from Bank of China (BOC).
 	- [Option 6 `-o`/`--op`](#option-6--o--op)
 - [Limitation](#limitation)
 - [MIT Licence](#mit-licence)
-<br>
-<br>
-
-# Features
-
-* [x] **As command-line application**
-* [x] **As python module**
-* [x] **Foreign exchange selection.**
-* [x] **Foreign exchange quotation filter.**
-* [x] **Date selection.**
-* [x] **Line graph generation.**
-* [x] **.csv generation.**
 <br>
 <br>
 

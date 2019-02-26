@@ -196,6 +196,7 @@ If not using this option, the default parameters will be `GBP,EUR,USD,CAD,AUD`.
 <br>
 
 #### Example:
+
 ```
 ~
 ❯ bocfx            
@@ -243,6 +244,7 @@ If not using this option, the default output will include all prices.
 <br>
 
 #### Example:
+
 ```
 ~
 ❯ bocfx -f GBP,USD -s ASK                                  

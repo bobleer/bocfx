@@ -13,7 +13,6 @@ A python package for getting foreign exchange rate from Bank of China (BOC).
 * [x] **Line graph generation.**
 * [x] **.csv generation.**
 <br>
-<br>
 
 - [Installation](#installation)
 - [Basic Usage](#basic-usage)
@@ -36,7 +35,6 @@ A python package for getting foreign exchange rate from Bank of China (BOC).
 	- [Option 6 `-o`/`--op`](#option-6--o--op)
 - [Limitation](#limitation)
 - [MIT Licence](#mit-licence)
-<br>
 <br>
 
 # Installation

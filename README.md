@@ -6,8 +6,8 @@ An easy-to-use python package for getting foreign exchange rate from Bank of Chi
 # Features
 
 * [x] **Multithreading**
-* [x] **As command-line application**
-* [x] **As python module**
+* [x] **As a command-line application**
+* [x] **As a python module**
 * [x] **Foreign exchange selection.**
 * [x] **Foreign exchange quotation filter.**
 * [x] **Date selection (Realtime/History).**
@@ -19,12 +19,12 @@ An easy-to-use python package for getting foreign exchange rate from Bank of Chi
 
 - [Installation](#installation)
 - [Basic Usage](#basic-usage)
-	- [As command-line application](#as-command-line-application)
-	- [As python module](#as-python-module)
+	- [As a command-line application](#as-command-line-application)
+	- [As a python module](#as-python-module)
 - [Advanced Usage](#advanced-usage)
-	- [As command-line application](#as-command-line-application-1)
+	- [As a command-line application](#as-command-line-application-1)
 		- [Example](#example)
-	- [As python module](#as-python-module-1)
+	- [As a python module](#as-python-module-1)
 		- [Example](#example-1)
 - [Option and parameter](#option-and-parameter)
 	- [Option 1 `-f`/`--fx`](#option-1--f--fx)
@@ -54,7 +54,7 @@ pip3 install bocfx
 # Basic Usage
 <br>
 
-## As command-line application
+## As a command-line application
 
 ```
 BOBMAC:~ bobleer$ bocfx                        
@@ -74,7 +74,7 @@ BOBMAC:~ bobleer$ bocfx
 <br>
 <br>
 
-## As python module
+## As a python module
 
 ```
 >>> from bocfx import bocfx
@@ -91,7 +91,7 @@ BOBMAC:~ bobleer$ bocfx
 # Advanced Usage
 <br>
 
-## As command-line application
+## As a command-line application
 
 ```Bash
 bocfx [-f|--fx] [-s|--sort] [-t|--time] (-p|--plot) (-c|--csv) {-o|--op}
@@ -130,7 +130,7 @@ Plot has already saved to /Users/bob/desktop/output/[GBP+USD+AUD]SE_ASK+BN_ASK_2
 <br>
 <br>
 
-## As python module
+## As a python module
 
 ```python
 from bocfx import bocfx

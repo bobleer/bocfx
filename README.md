@@ -128,7 +128,7 @@ bocfx(FX=0, sort=0, time=-1, plot=0, csv=0, pt=0, op='~/bocfx_output')
 >>> print(example01)
 [[2, 'SE_BID', 'SE_ASK', 'Time'], ['USD', '669.74', '672.58', '2019-02-25 09:25:23'], ['GBP', '874.18', '880.62', '2019-02-25 09:25:13'], ... , ['GBP', '873.83', '880.27', '2019-02-24 00:00:05'], ['USD', '670.24', '673.08', '2019-02-24 00:00:05']]
 ```
-
+<br>
 ```
 >>> from bocfx import bocfx
 
@@ -160,8 +160,10 @@ Plot has already saved to /Users/bob/desktop/example/[GBP+USD]SE_BID+SE_ASK_2018
 `-f`/`--fx` is the BOC foreign excahnge selector. This opinion supports **multi-parameter**.
 
 `,` is the separator of each parameter.
+<br>
+<br>
 
-Common foreign currency:
+#### Common foreign currency:
 
 Parameter | Currency | Country (Region) | Fault-tolerant
 :-|:-|:-|:-
@@ -190,8 +192,10 @@ Parameter | Currency | Country (Region) | Fault-tolerant
 `SAR` | Saudi Riyal | Saudi Arabia | `sar`
 
 If not using this option, the default parameters will be `GBP,EUR,USD,CAD,AUD`.
+<br>
+<br>
 
-Example:
+#### Example:
 ```
 ~
 ❯ bocfx            
@@ -235,8 +239,10 @@ Example:
  `ASK` Ask Price | `SE,ASK` SE_ASK | `BN,ASK` BN_ASK
 
 If not using this option, the default output will include all prices.
+<br>
+<br>
 
-Example:
+#### Example:
 ```
 ~
 ❯ bocfx -f GBP,USD -s ASK                                  
@@ -315,7 +321,7 @@ This package is no-database design. All of data are from http://srh.bankofchina.
 
 # MIT Licence
 
-Copyright (c) 2018 The Python Packaging Authority
+Copyright (c) 2019 The Python Packaging Authority
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -334,4 +340,4 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
-
+<br>

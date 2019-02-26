@@ -120,20 +120,25 @@ bocfx(FX=0, sort=0, time=-1, plot=0, csv=0, pt=0, op='~/bocfx_output')
 
 ### Equivalent command
 ### example01 = bocfx(FX='GBP,USD', sort='SE', time=1)
+
 >>> example01 = bocfx('GBP,USD','SE',1)
 100%|█████████████████████████████████████████████| 2/2 [00:01<00:00,  1.49it/s]
 
 >>> type(example01)
 <class 'list'>
+
 >>> print(example01)
 [[2, 'SE_BID', 'SE_ASK', 'Time'], ['USD', '669.74', '672.58', '2019-02-25 09:25:23'], ['GBP', '874.18', '880.62', '2019-02-25 09:25:13'], ... , ['GBP', '873.83', '880.27', '2019-02-24 00:00:05'], ['USD', '670.24', '673.08', '2019-02-24 00:00:05']]
 ```
+
 <br>
+
 ```
 >>> from bocfx import bocfx
 
 ### Equivalent command
 ### example02 = bocfx(FX='GBP,USD', sort='SE', time='2018-08-01,2018-08-02', plot=1, csv=1, pt=0, op='~/desktop/example/')
+
 >>> example02 = bocfx('GBP,USD','SE','2018-08-01,2018-08-02',1,1,0,op='~/desktop/example/')
 100%|█████████████████████████████████████████████| 2/2 [00:02<00:00,  1.05it/s]
 100%|██████████████████████████████████████████| 26/26 [00:00<00:00, 134.46it/s]
@@ -144,6 +149,7 @@ Plot has already saved to /Users/bob/desktop/example/[GBP+USD]SE_BID+SE_ASK_2018
 
 >>> type(example02)
 <class 'list'>
+
 >>> print(example02)
 [[2, 'SE_BID', 'SE_ASK', 'Time'], ['GBP', '888.85', '895.4', '2018-08-02 23:19:36'], ['USD', '683.01', '685.91', '2018-08-02 23:19:36'], ... , ['GBP', '891.33', '897.89', '2018-08-01 00:00:05'], ['USD', '680.22', '683.1', '2018-08-01 00:00:05']]
 ```

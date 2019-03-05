@@ -18,6 +18,14 @@ setuptools.setup(
             'bocfx = bocfx:asexec',
         ],
     },
+    install_requires=[
+        'requests',
+        'scrapy',
+        'tqdm',
+        'prettytable',
+        'numpy',
+        'matplotlib',
+    ],
     classifiers=[
         "Programming Language :: Python :: 3",
         "License :: OSI Approved :: MIT License",

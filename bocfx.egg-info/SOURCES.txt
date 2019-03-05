@@ -6,4 +6,5 @@ bocfx.egg-info/PKG-INFO
 bocfx.egg-info/SOURCES.txt
 bocfx.egg-info/dependency_links.txt
 bocfx.egg-info/entry_points.txt
+bocfx.egg-info/requires.txt
 bocfx.egg-info/top_level.txt

@@ -80,10 +80,10 @@ def page_get(output, sort, FX_or, erectDate, nothing, FX, i, page, end):
 			SE_A = Selector(text=html).xpath('//tr[%i]/td[4]/text()' % (row)).extract()[0]
 			BN_A = Selector(text=html).xpath('//tr[%i]/td[5]/text()' % (row)).extract()[0]
 			time = Selector(text=html).xpath('//tr[%i]/td[7]/text()' % (row)).extract()[0].replace('.','-')
-			if time == lasttime:
-				continue
-			output.append(eval(sort))
-			lasttime = time
+			if time != lasttime:
+				#continue
+				output.append(eval(sort))
+				lasttime = time
 		except IndexError:
 			break
 

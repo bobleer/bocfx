@@ -1,23 +1,39 @@
 Metadata-Version: 2.1
 Name: bocfx
-Version: 0.6.8
+Version: 0.6.9
 Summary: Easy way to get foreign exchange rate from Bank of China.
 Home-page: https://github.com/bobleer/bocfx
 Author: bobleer
 Author-email: liwenbo628@gmail.com
 License: UNKNOWN
 Description: # bocfx
-        A python package for getting foreign exchange rate from Bank of China (BOC).
+        An easy-to-use python package for getting foreign exchange rate from Bank of China (BOC).  
+        Author: [**Bob Lee**](https://github.com/bobleer)
+        <br>
+        <br>
         
-        - [Features](#features)
+        # Features
+        
+        * [x] **Multithreading**
+        * [x] **As a command-line application**
+        * [x] **As a python module**
+        * [x] **Foreign exchange selection.**
+        * [x] **Foreign exchange quotation filter.**
+        * [x] **Date selection (Realtime/History).**
+        * [x] **Line graph generation.**
+        * [x] **.csv generation.**
+        <br>
+        
+        # Contents
+        
         - [Installation](#installation)
         - [Basic Usage](#basic-usage)
-        	- [As command-line application](#as-command-line-application)
-        	- [As python module](#as-python-module)
+        	- [As a command-line application](#as-command-line-application)
+        	- [As a python module](#as-python-module)
         - [Advanced Usage](#advanced-usage)
-        	- [As command-line application](#as-command-line-application-1)
+        	- [As a command-line application](#as-command-line-application-1)
         		- [Example](#example)
-        	- [As python module](#as-python-module-1)
+        	- [As a python module](#as-python-module-1)
         		- [Example](#example-1)
         - [Option and parameter](#option-and-parameter)
         	- [Option 1 `-f`/`--fx`](#option-1--f--fx)
@@ -31,19 +47,6 @@ Description: # bocfx
         	- [Option 6 `-o`/`--op`](#option-6--o--op)
         - [Limitation](#limitation)
         - [MIT Licence](#mit-licence)
-        <br>
-        <br>
-        
-        # Features
-        
-        - [x] **As command-line application**
-        - [x] **As python module**
-        - [x] **Foreign exchange selection.**
-        - [x] **Foreign exchange quotation filter.**
-        - [x] **Date selection.**
-        - [x] **Line graph generation.**
-        - [x] **.csv generation.**
-        <br>
         <br>
         
         # Installation
@@ -60,7 +63,7 @@ Description: # bocfx
         # Basic Usage
         <br>
         
-        ## As command-line application
+        ## As a command-line application
         
         ```
         BOBMAC:~ bobleer$ bocfx                        
@@ -80,7 +83,7 @@ Description: # bocfx
         <br>
         <br>
         
-        ## As python module
+        ## As a python module
         
         ```
         >>> from bocfx import bocfx
@@ -97,7 +100,7 @@ Description: # bocfx
         # Advanced Usage
         <br>
         
-        ## As command-line application
+        ## As a command-line application
         
         ```Bash
         bocfx [-f|--fx] [-s|--sort] [-t|--time] (-p|--plot) (-c|--csv) {-o|--op}
@@ -136,7 +139,7 @@ Description: # bocfx
         <br>
         <br>
         
-        ## As python module
+        ## As a python module
         
         ```python
         from bocfx import bocfx
@@ -324,7 +327,7 @@ Description: # bocfx
          2 | `2019-02-20` | Get data from 2019-02-20 to today
          3 | `2019-02-20,2019-02-21` | Get data from 2019-02-20 to 2019-02-21
          
-        If not using this option, **only the latest data** will be output.
+        If not using this option, **only the latest quotation** will be output.
         <br>
         <br>
         <br>
@@ -352,6 +355,7 @@ Description: # bocfx
         Using `-o`/`--op` can change default output path.
         
         Example: `-o '~/desktop/example/'`
+        <br>
         <br>
         <br>
         

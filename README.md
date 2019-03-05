@@ -44,8 +44,8 @@ Author: [**Bob Lee**](https://github.com/bobleer)
 # Installation
 
 ```
-# Required packages
-# pip3 install -U requests scrapy tqdm prettytable numpy matplotlib
+# Required packages will be installed automatically
+# ~~pip3 install -U~~ requests scrapy tqdm prettytable numpy matplotlib
 
 pip3 install bocfx
 ```

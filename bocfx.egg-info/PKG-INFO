@@ -1,14 +1,15 @@
 Metadata-Version: 2.1
 Name: bocfx
-Version: 0.6.9
+Version: 0.7.0
 Summary: Easy way to get foreign exchange rate from Bank of China.
 Home-page: https://github.com/bobleer/bocfx
 Author: bobleer
 Author-email: liwenbo628@gmail.com
 License: UNKNOWN
-Description: # bocfx
+Description: # bocfx ![](https://img.shields.io/badge/Python-3-brightgreen.svg)
         An easy-to-use python package for getting foreign exchange rate from Bank of China (BOC).  
-        Author: [**Bob Lee**](https://github.com/bobleer)
+        Author: [**Bob Lee**](https://github.com/bobleer)  
+        
         <br>
         <br>
         
@@ -52,7 +53,7 @@ Description: # bocfx
         # Installation
         
         ```
-        # Required packages
+        # Required packages will be installed automatically
         # pip3 install -U requests scrapy tqdm prettytable numpy matplotlib
         
         pip3 install bocfx

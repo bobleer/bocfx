@@ -84,7 +84,7 @@ BOBMAC:~ bobleer$ bocfx
 >>> output = bocfx('GBP,USD','SE,ASK')
 100%|████████████████████████████████████████████| 5/5 [00:00<00:00, 532.87it/s]
 
->>> output # Latest foreign exchange rate
+>>> output # The latest foreign exchange rate
 ['879.96', '672.28']
 ```
 <br>

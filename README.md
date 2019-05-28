@@ -354,9 +354,11 @@ Example: `-o '~/desktop/example/'`
 
 # Limitation
 
-This package is no-database design. All of data are from http://srh.bankofchina.com/search/whpj/search.jsp
+This package is no-database design.   
 
-**The speed of spider will be strongly influenced by the connectation quality.**
+All data are captured from http://srh.bankofchina.com/search/whpj/search.jsp in real time.  
+
+**Thus, the speed of spider will be strongly influenced by the connectation quality!**
 <br>
 <br>
 <br>

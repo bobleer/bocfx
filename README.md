@@ -336,7 +336,7 @@ The default output path is `~/bocfx_output/`
 
 ## Option 5 `-c`/`--csv`
 
-Using `-p`/`--plot` can output data in .csv format.
+Using `-c`/`--csv` can output data in .csv format.
 
 The default output path is `~/bocfx_output/`
 <br>

@@ -1,4 +1,4 @@
-# bocfx ![](https://img.shields.io/badge/Python-3-brightgreen.svg)
+# bocfx ![](https://img.shields.io/badge/License-MIT-green.svg) ![](https://img.shields.io/badge/Python-3-blue.svg) ![](https://img.shields.io/badge/PyPI-0.7.0-orange.svg)
 An easy-to-use python package for getting foreign exchange rate from Bank of China (BOC).  
 Author: [**Bob Lee**](https://github.com/bobleer)  
 

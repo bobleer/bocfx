@@ -200,7 +200,7 @@ Plot has already saved to /Users/bob/desktop/example/[GBP+USD]SE_BID+SE_ASK_2018
 
 #### Common foreign currency:
 
-Parameter | Currency | Country (Region) | Fault-tolerant
+Parameter | Currency | Country (Region) | Alias
 :-|:-|:-|:-
 `GBP` | Pound | The United Kingdom | `gbp`/`UK`/`uk`
 `EUR` | Euro | European Union | `eur`/`EU`/`eu`

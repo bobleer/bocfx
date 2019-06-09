@@ -226,7 +226,7 @@ Parameter | Currency | Country (Region) | Alias
 `AED` | United Arab Emirates Dirham | United Arab Emirates | `aed`
 `SAR` | Saudi Riyal | Saudi Arabia | `sar`
 
-If not using this option, the default parameters will be `GBP,EUR,USD,CAD,AUD`.
+If not using this option, the default parameters will be `GBP, EUR, USD, CAD, AUD`.
 <br>
 <br>
 

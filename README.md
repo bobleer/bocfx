@@ -16,7 +16,7 @@ Author: [**Bob Lee**](https://boblee.cn)
 * [x] **Line graph generation 支持生成历史波动曲线**
 * [x] **.csv generation 支持导出csv格式表格文件**
 * [x] **Set output path 支持导出到指定路径**
-* [ ] **Database connection 支持导出到数据库（开发中）**
+* [ ] **Export to database 支持导出到数据库（开发中）**
 
 <br>
 
@@ -47,13 +47,12 @@ Author: [**Bob Lee**](https://boblee.cn)
 
 # Installation
 
+Generally, one line command can perfect installation.
 ```
-# (Discarded) Required packages will be installed automatically
-# (Discarded) pip3 install -U requests scrapy tqdm prettytable numpy matplotlib
-
-# pip install bocfx
 pip3 install bocfx 
-```
+```  
+If your `pip` links python3, please use `pip install bocfx` to install bocfx.   
+But remember, Bocfx may not support python2.  
 <br>
 <br>
 

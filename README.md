@@ -16,7 +16,7 @@ Author: [**Bob Lee**](https://boblee.cn)
 * [x] **Line graph generation 支持生成历史波动曲线**
 * [x] **.csv generation 支持导出csv格式表格文件**
 * [x] **Set output path 支持导出到指定路径**
-* [] **Database connection 支持导出到数据库（开发中）**
+* [ ] **Database connection 支持导出到数据库（开发中）**
 
 <br>
 

@@ -1,6 +1,6 @@
 # bocfx ![](https://img.shields.io/badge/License-MIT-green.svg) ![](https://img.shields.io/badge/Python-3-blue.svg) ![](https://img.shields.io/badge/PyPI-0.7.0-orange.svg)
 An easy-to-use python package for getting foreign exchange rate from Bank of China (BOC).  
-一个帮你快速获取中国银行外汇牌价的 Python 应用。  
+一个帮你快速获取中国银行外汇牌价的 Python 应用（也可作API)。  
 Author: [**Bob Lee**](https://boblee.cn)
 <br>
 <br>
@@ -9,36 +9,39 @@ Author: [**Bob Lee**](https://boblee.cn)
 
 * [x] **Multithreading 多线程**
 * [x] **As a command-line application 支持命令行应用模式**
-* [x] **As a python module 支持模块导入模式**
+* [x] **As a python module 支持模块导入模式（导入到你自己的项目里就能作API了）**
 * [x] **Foreign exchange selection 支持多种外汇币种同时输出（默认是英、欧、美、加、澳）**
 * [x] **Foreign exchange quotation filter 支持外汇牌价种类同时输出（买入、卖出、现钞、现汇）**
 * [x] **Date selection (Realtime/History) 支持按时间/时间段筛选**
 * [x] **Line graph generation 支持生成历史波动曲线**
 * [x] **.csv generation 支持导出csv格式表格文件**
+* [x] **Set output path 支持导出到指定路径**
+* [] **Database connection 支持导出到数据库（开发中）**
+
 <br>
 
 # Contents
 
-- [Installation](#installation)
-- [Basic Usage](#basic-usage)
-	- [As a command-line application](#as-command-line-application)
-	- [As a python module](#as-python-module)
-- [Advanced Usage](#advanced-usage)
-	- [As a command-line application](#as-command-line-application-1)
+- [Installation 安装](#installation)
+- [Basic Usage 基本用法](#basic-usage)
+	- [As a command-line application 作为命令行程序使用](#as-command-line-application)
+	- [As a python module 作为API使用](#as-python-module)
+- [Advanced Usage 进阶用法](#advanced-usage)
+	- [As a command-line application 作为命令行程序使用](#as-command-line-application-1)
 		- [Example](#example)
-	- [As a python module](#as-python-module-1)
+	- [As a python module 作为API使用](#as-python-module-1)
 		- [Example](#example-1)
-- [Option and parameter](#option-and-parameter)
-	- [Option 1 `-f`/`--fx`](#option-1--f--fx)
+- [Option and parameter 参数选择](#option-and-parameter)
+	- [Option 1 `-f`/`--fx` 外汇种类](#option-1--f--fx)
 		- [Common foreign currency:](#common-foreign-currency)
 		- [Example](#example-2)
-	- [Option 2 `-s`/`--sort`](#option-2--s--sort)
+	- [Option 2 `-s`/`--sort` 牌价种类](#option-2--s--sort)
 		- [Example](#example-3)
-	- [Option 3 `-t`/`--time`](#option-3--t--time)
-	- [Option 4 `-p`/`--plot`](#option-4--p--plot)
-	- [Option 5 `-c`/`--csv`](#option-5--c--csv)
-	- [Option 6 `-o`/`--op`](#option-6--o--op)
-- [Limitation](#limitation)
+	- [Option 3 `-t`/`--time` 时间、时间段](#option-3--t--time)
+	- [Option 4 `-p`/`--plot` 画图](#option-4--p--plot)
+	- [Option 5 `-c`/`--csv` 导出csv表格](#option-5--c--csv)
+	- [Option 6 `-o`/`--op` 导出文件路径设置](#option-6--o--op)
+- [Limitation 局限性](#limitation)
 - [MIT Licence](#mit-licence)
 <br>
 

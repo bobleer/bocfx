@@ -1,19 +1,20 @@
 # bocfx ![](https://img.shields.io/badge/License-MIT-green.svg) ![](https://img.shields.io/badge/Python-3-blue.svg) ![](https://img.shields.io/badge/PyPI-0.7.0-orange.svg)
 An easy-to-use python package for getting foreign exchange rate from Bank of China (BOC).  
-Author: [**Bob Lee**](https://github.com/bobleer)
+一个帮你快速获取外汇牌价的 Python 应用。
+Author: [**Bob Lee**](https://boblee.cn)
 <br>
 <br>
 
 # Features
 
-* [x] **Multithreading**
-* [x] **As a command-line application**
-* [x] **As a python module**
-* [x] **Foreign exchange selection.**
-* [x] **Foreign exchange quotation filter.**
-* [x] **Date selection (Realtime/History).**
-* [x] **Line graph generation.**
-* [x] **.csv generation.**
+* [x] **Multithreading 多线程**
+* [x] **As a command-line application 支持命令行应用模式**
+* [x] **As a python module 支持模块导入模式**
+* [x] **Foreign exchange selection 支持多种外汇币种同时输出（默认是英、欧、美、加、澳）**
+* [x] **Foreign exchange quotation filter 支持外汇牌价种类同时输出（买入、卖出、现钞、现汇）**
+* [x] **Date selection (Realtime/History) 支持按时间/时间段筛选**
+* [x] **Line graph generation 支持生成历史波动曲线**
+* [x] **.csv generation 支持导出csv格式表格文件**
 <br>
 
 # Contents

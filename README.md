@@ -52,7 +52,7 @@ Generally, one line command can perfect installation.
 pip3 install bocfx 
 ```  
 If your `pip` links python3, please use `pip install bocfx` to install bocfx.   
-But remember, Bocfx may not support python2.  
+REMEMBER, Bocfx may not support python2.  
 <br>
 <br>
 

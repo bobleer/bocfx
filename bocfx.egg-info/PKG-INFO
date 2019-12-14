@@ -1,63 +1,66 @@
 Metadata-Version: 2.1
 Name: bocfx
-Version: 0.7.0
-Summary: Easy way to get foreign exchange rate from Bank of China.
+Version: 0.7.2
+Summary: Easy API to get foreign exchange rate from Bank of China.
 Home-page: https://github.com/bobleer/bocfx
 Author: bobleer
 Author-email: liwenbo628@gmail.com
 License: UNKNOWN
-Description: # bocfx ![](https://img.shields.io/badge/Python-3-brightgreen.svg)
+Description: # bocfx ![](https://img.shields.io/badge/License-MIT-green.svg) ![](https://img.shields.io/badge/Python-3-blue.svg) ![](https://img.shields.io/badge/PyPI-0.7.0-orange.svg)
         An easy-to-use python package for getting foreign exchange rate from Bank of China (BOC).  
-        Author: [**Bob Lee**](https://github.com/bobleer)  
-        
+        一个帮你快速获取中国银行外汇牌价的 Python 爬虫（也可作外汇牌价API)。  
+        Author: [**Bob Lee**](https://boblee.cn)
         <br>
         <br>
         
         # Features
         
-        * [x] **Multithreading**
-        * [x] **As a command-line application**
-        * [x] **As a python module**
-        * [x] **Foreign exchange selection.**
-        * [x] **Foreign exchange quotation filter.**
-        * [x] **Date selection (Realtime/History).**
-        * [x] **Line graph generation.**
-        * [x] **.csv generation.**
+        * [x] **Multithreading 多线程**
+        * [x] **As a command-line application 支持命令行应用模式**
+        * [x] **As a python module 支持模块导入模式（import到你自己的项目里就能作API了）**
+        * [x] **Foreign exchange selection 支持多种外汇币种同时输出（默认是英、欧、美、加、澳）**
+        * [x] **Foreign exchange quotation filter 支持外汇牌价种类同时输出（买入、卖出、现钞、现汇）**
+        * [x] **Date selection (Realtime/History) 支持按时间/时间段筛选**
+        * [x] **Line graph generation 支持生成历史波动曲线**
+        * [x] **.csv generation 支持导出csv格式表格文件**
+        * [x] **Set output path 支持导出到指定路径**
+        * [ ] **Export to database 支持导出到数据库（开发中）**
+        
         <br>
         
         # Contents
         
-        - [Installation](#installation)
-        - [Basic Usage](#basic-usage)
-        	- [As a command-line application](#as-command-line-application)
-        	- [As a python module](#as-python-module)
-        - [Advanced Usage](#advanced-usage)
-        	- [As a command-line application](#as-command-line-application-1)
+        - [Installation 安装](#installation)
+        - [Basic Usage 基本用法](#basic-usage)
+        	- [As a command-line application 作为命令行程序使用](#as-command-line-application)
+        	- [As a python module 作为API使用](#as-python-module)
+        - [Advanced Usage 进阶用法](#advanced-usage)
+        	- [As a command-line application 作为命令行程序使用](#as-command-line-application-1)
         		- [Example](#example)
-        	- [As a python module](#as-python-module-1)
+        	- [As a python module 作为API使用](#as-python-module-1)
         		- [Example](#example-1)
-        - [Option and parameter](#option-and-parameter)
-        	- [Option 1 `-f`/`--fx`](#option-1--f--fx)
+        - [Option and parameter 参数选择](#option-and-parameter)
+        	- [Option 1 `-f`/`--fx` 外汇种类](#option-1--f--fx)
         		- [Common foreign currency:](#common-foreign-currency)
         		- [Example](#example-2)
-        	- [Option 2 `-s`/`--sort`](#option-2--s--sort)
+        	- [Option 2 `-s`/`--sort` 牌价种类](#option-2--s--sort)
         		- [Example](#example-3)
-        	- [Option 3 `-t`/`--time`](#option-3--t--time)
-        	- [Option 4 `-p`/`--plot`](#option-4--p--plot)
-        	- [Option 5 `-c`/`--csv`](#option-5--c--csv)
-        	- [Option 6 `-o`/`--op`](#option-6--o--op)
-        - [Limitation](#limitation)
+        	- [Option 3 `-t`/`--time` 时间、时间段](#option-3--t--time)
+        	- [Option 4 `-p`/`--plot` 画图](#option-4--p--plot)
+        	- [Option 5 `-c`/`--csv` 导出csv表格](#option-5--c--csv)
+        	- [Option 6 `-o`/`--op` 导出文件路径设置](#option-6--o--op)
+        - [Limitation 局限性](#limitation)
         - [MIT Licence](#mit-licence)
         <br>
         
         # Installation
         
+        Generally, one line command can perfect installation.
         ```
-        # Required packages will be installed automatically
-        # pip3 install -U requests scrapy tqdm prettytable numpy matplotlib
-        
-        pip3 install bocfx
-        ```
+        pip3 install bocfx 
+        ```  
+        If your `pip` links python3, please use `pip install bocfx` to install bocfx.   
+        REMEMBER, Bocfx may not support python2.  
         <br>
         <br>
         
@@ -92,7 +95,7 @@ Description: # bocfx ![](https://img.shields.io/badge/Python-3-brightgreen.svg)
         >>> output = bocfx('GBP,USD','SE,ASK')
         100%|████████████████████████████████████████████| 5/5 [00:00<00:00, 532.87it/s]
         
-        >>> output # Latest foreign exchange rate
+        >>> output # The latest foreign exchange rate
         ['879.96', '672.28']
         ```
         <br>
@@ -207,34 +210,47 @@ Description: # bocfx ![](https://img.shields.io/badge/Python-3-brightgreen.svg)
         <br>
         
         #### Common foreign currency:
-        
-        Parameter | Currency | Country (Region) | Fault-tolerant
+          
+        FX | ISO Code | Full Name | Alias
         :-|:-|:-|:-
-        `GBP` | Pound | The United Kingdom | `gbp`/`UK`/`uk`
-        `EUR` | Euro | European Union | `eur`/`EU`/`eu`
-        `USD` | Dollar | The United States | `usd`/`USA`/`usa`/`US`/`us`
-        `CAD` | Canadian Dollar | Canada | `cad`/`CA`/`ca`
-        `AUD` | Australian Dollar | Australia | `aud`/`AU`/`au`
-        `RUB` | Russian Ruble | Russia | `rub`/`RU`/`ru`
-        `HKD` | Hong Kong Dollar | Hong Kong | `hdk`/`HK`/`hk`
-        `MOP` | Macao Pataca | Macao | `mop`
-        `NTD` | New Taiwan Dollar | Taiwan | `ntd`/`TW`/`tw`
-        `JPY` | Japanese Yen | Japan | `jpy`/`JP`/`jp`/`Yen`
-        `KRW` | South Korean Won | South Korean | `krw`/`KR`/`kr`
-        `THB` | Thai Baht | Thailand | `thb`/`Thai`
-        `PHP` | Philippine Peso | Philippines | `php`/`Peso`
-        `MYR` | Malaysian Ringgit | Malaysia | `myr`/`Sen`
-        `SGD` | Singapore Dollar | Singapore | `sgd`
-        `NZD` | New Zealand Dollar | New Zealand | `nzd`/`Kiwi`
-        `INR` | Indian Rupee | India | `inr`
-        `TRY` | Turkish Lira | Turkey | `try`/`YTL`/`ytl`
-        `BRL` | Brazilian Real | Brazil | `brl`
-        `IDR` | Indonesian Rupiah | Indonesia | `idr`
-        `ZAR` | South African Rand | South Africa | `zar`
-        `AED` | United Arab Emirates Dirham | United Arab Emirates | `aed`
-        `SAR` | Saudi Riyal | Saudi Arabia | `sar`
+        `英镑` | `GBP` | Great Britain Pound | `UK` 
+        `港币` | `HKD` | Hong Kong Dollar | `HK` 
+        `美元` | `USD` | United States Dollar | `US` 
+        `瑞士法郎` | `CHF` | Swiss Franc | 
+        `德国马克` | `DEM` | Deutsche Mark | 
+        `法国法郎` | `FRF` | French Franc | `FF` 
+        `新加坡元` | `SGD` | Singapore Dollar | 
+        `瑞典克朗` | `SEK` | Swedish Krona | 
+        `丹麦克朗` | `DKK` | Danish Krone | 
+        `挪威克朗` | `NOK` | Norwegian Krone | 
+        `日元` | `JPY` | Japanese Yen | `JP` 
+        `加拿大元` | `CAD` | Canadian Dollar | `CA` 
+        `澳大利亚元` | `AUD` | Australian Dollar | `AU` 
+        `欧元` | `EUR` | Euro | `EU` 
+        `澳门元` | `MOP` | Macao Pataca | 
+        `菲律宾比索` | `PHP` | Philippine Peso | 
+        `泰国铢` | `THB` | Thai Baht | 
+        `新西兰元` | `NZD` | New Zealand Dollar | `KIWI` 
+        `韩元` | `WON` | South Korean Won | `SK` 
+        `卢布` | `RUB` | Russian Ruble | `RU` 
+        `林吉特` | `MYR` | Malaysia Ringgit | `SEN` 
+        `新台币` | `NTD` | New Taiwan Dollar | `TW` 
+        `西班牙比塞塔` | `ESP` | Spain Peseta | 
+        `意大利里拉` | `ITL` | Italian Lira | 
+        `荷兰盾` | `ANG` | Nederlandse Gulden | 
+        `比利时法郎` | `BEF` | Belgian Franc | 
+        `芬兰马克` | `FIM` | Finnish Mark | 
+        `印度卢比` | `INR` | Indian Rupee | 
+        `印尼卢比` | `IDR` | Indonesian Rupee | 
+        `巴西里亚尔` | `BRL` | Brasil Rial | 
+        `阿联酋迪拉姆` | `AED` | United Arab Emirates Dirham | 
+        `南非兰特` | `ZAF` | South African Rand | 
+        `沙特里亚尔` | `SAR` | Saudi Arabian Riyal | 
+        `土耳其里拉` | `TRY` | Yeni Türk Lirası | `YTL` 
         
-        If not using this option, the default parameters will be `GBP,EUR,USD,CAD,AUD`.
+        FX, ISO and Alias can be used as values of this option, e.g. `英镑`, `GBP`, `UK` are all correct.
+        This parameter is case-insensitive, e.g. `GBP`, `gBp`, `UK`, `uk` will get same output.  
+        If not using this option, the default parameter will be `GBP, EUR, USD, CAD, AUD`.  
         <br>
         <br>
         
@@ -344,7 +360,7 @@ Description: # bocfx ![](https://img.shields.io/badge/Python-3-brightgreen.svg)
         
         ## Option 5 `-c`/`--csv`
         
-        Using `-p`/`--plot` can output data in .csv format.
+        Using `-c`/`--csv` can output data in .csv format.
         
         The default output path is `~/bocfx_output/`
         <br>
@@ -362,9 +378,11 @@ Description: # bocfx ![](https://img.shields.io/badge/Python-3-brightgreen.svg)
         
         # Limitation
         
-        This package is no-database design. All of data are from http://srh.bankofchina.com/search/whpj/search.jsp
+        This package is no-database design.   
         
-        **The speed of spider will be strongly influenced by the connectation quality.**
+        All data are captured from http://srh.bankofchina.com/search/whpj/search.jsp in real time.  
+        
+        **Thus, the speed of spider will be strongly influenced by the connectation quality!**
         <br>
         <br>
         <br>

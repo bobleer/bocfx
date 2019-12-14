@@ -9,7 +9,7 @@ Author: [**Bob Lee**](https://boblee.cn)
 
 * [x] **Multithreading 多线程**
 * [x] **As a command-line application 支持命令行应用模式**
-* [x] **As a python module 支持模块导入模式（导入到你自己的项目里就能作API了）**
+* [x] **As a python module 支持模块导入模式（import到你自己的项目里就能作API了）**
 * [x] **Foreign exchange selection 支持多种外汇币种同时输出（默认是英、欧、美、加、澳）**
 * [x] **Foreign exchange quotation filter 支持外汇牌价种类同时输出（买入、卖出、现钞、现汇）**
 * [x] **Date selection (Realtime/History) 支持按时间/时间段筛选**
@@ -240,9 +240,9 @@ FX | ISO Code | Full Name | Alias
 `沙特里亚尔` | `SAR` | Saudi Arabian Riyal | 
 `土耳其里拉` | `TRY` | Yeni Türk Lirası | `YTL` 
 
-FX, ISO and Alias can be used as values of this option. 
-This parameter is case-insensitive, e.g. `GBP`, `gBp`, `UK`, `uk` will get same output.
-If not using this option, the default parameter will be `GBP, EUR, USD, CAD, AUD`.
+FX, ISO and Alias can be used as values of this option.  
+This parameter is case-insensitive, e.g. `GBP`, `gBp`, `UK`, `uk` will get same output.  
+If not using this option, the default parameter will be `GBP, EUR, USD, CAD, AUD`.  
 <br>
 <br>
 

@@ -202,35 +202,47 @@ Plot has already saved to /Users/bob/desktop/example/[GBP+USD]SE_BID+SE_ASK_2018
 <br>
 
 #### Common foreign currency:
-
-FX | ISO Code | Full Name | Alias Support
+  
+FX | ISO Code | Full Name | Alias
 :-|:-|:-|:-
-`GBP` | Pound | The United Kingdom | `gbp`/`UK`/`uk`
-`EUR` | Euro | European Union | `eur`/`EU`/`eu`
-`USD` | Dollar | The United States | `usd`/`USA`/`usa`/`US`/`us`
-`CAD` | Canadian Dollar | Canada | `cad`/`CA`/`ca`
-`AUD` | Australian Dollar | Australia | `aud`/`AU`/`au`
-`RUB` | Russian Ruble | Russia | `rub`/`RU`/`ru`
-`HKD` | Hong Kong Dollar | Hong Kong | `hdk`/`HK`/`hk`
-`MOP` | Macao Pataca | Macao | `mop`
-`NTD` | New Taiwan Dollar | Taiwan | `ntd`/`TW`/`tw`
-`JPY` | Japanese Yen | Japan | `jpy`/`JP`/`jp`/`Yen`
-`KRW` | South Korean Won | South Korean | `krw`/`KR`/`kr`
-`THB` | Thai Baht | Thailand | `thb`/`Thai`
-`PHP` | Philippine Peso | Philippines | `php`/`Peso`
-`MYR` | Malaysian Ringgit | Malaysia | `myr`/`Sen`
-`SGD` | Singapore Dollar | Singapore | `sgd`
-`NZD` | New Zealand Dollar | New Zealand | `nzd`/`Kiwi`
-`INR` | Indian Rupee | India | `inr`
-`TRY` | Turkish Lira | Turkey | `try`/`YTL`/`ytl`
-`BRL` | Brazilian Real | Brazil | `brl`
-`IDR` | Indonesian Rupiah | Indonesia | `idr`
-`ZAR` | South African Rand | South Africa | `zar`
-`AED` | United Arab Emirates Dirham | United Arab Emirates | `aed`
-`SAR` | Saudi Riyal | Saudi Arabia | `sar`
+`英镑` | `GBP` | Great Britain Pound | `UK` 
+`港币` | `HKD` | Hong Kong Dollar | `HK` 
+`美元` | `USD` | United States Dollar | `US` 
+`瑞士法郎` | `CHF` | Swiss Franc | 
+`德国马克` | `DEM` | Deutsche Mark | 
+`法国法郎` | `FRF` | French Franc | `FF` 
+`新加坡元` | `SGD` | Singapore Dollar | 
+`瑞典克朗` | `SEK` | Swedish Krona | 
+`丹麦克朗` | `DKK` | Danish Krone | 
+`挪威克朗` | `NOK` | Norwegian Krone | 
+`日元` | `JPY` | Japanese Yen | `JP` 
+`加拿大元` | `CAD` | Canadian Dollar | `CA` 
+`澳大利亚元` | `AUD` | Australian Dollar | `AU` 
+`欧元` | `EUR` | Euro | `EU` 
+`澳门元` | `MOP` | Macao Pataca | 
+`菲律宾比索` | `PHP` | Philippine Peso | 
+`泰国铢` | `THB` | Thai Baht | 
+`新西兰元` | `NZD` | New Zealand Dollar | `KIWI` 
+`韩元` | `WON` | South Korean Won | `SK` 
+`卢布` | `RUB` | Russian Ruble | `RU` 
+`林吉特` | `MYR` | Malaysia Ringgit | `SEN` 
+`新台币` | `NTD` | New Taiwan Dollar | `TW` 
+`西班牙比塞塔` | `ESP` | Spain Peseta | 
+`意大利里拉` | `ITL` | Italian Lira | 
+`荷兰盾` | `ANG` | Nederlandse Gulden | 
+`比利时法郎` | `BEF` | Belgian Franc | 
+`芬兰马克` | `FIM` | Finnish Mark | 
+`印度卢比` | `INR` | Indian Rupee | 
+`印尼卢比` | `IDR` | Indonesian Rupee | 
+`巴西里亚尔` | `BRL` | Brasil Rial | 
+`阿联酋迪拉姆` | `AED` | United Arab Emirates Dirham | 
+`南非兰特` | `ZAF` | South African Rand | 
+`沙特里亚尔` | `SAR` | Saudi Arabian Riyal | 
+`土耳其里拉` | `TRY` | Yeni Türk Lirası | `YTL` 
 
+FX, ISO and Alias can be used as values of this option. 
 This parameter is case-insensitive, e.g. `GBP`, `gBp`, `UK`, `uk` will get same output.
-If not using this opinion, the default parameter will be `GBP, EUR, USD, CAD, AUD`.
+If not using this option, the default parameter will be `GBP, EUR, USD, CAD, AUD`.
 <br>
 <br>
 

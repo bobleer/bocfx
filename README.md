@@ -203,7 +203,7 @@ Plot has already saved to /Users/bob/desktop/example/[GBP+USD]SE_BID+SE_ASK_2018
 
 #### Common foreign currency:
 
-Parameter | Currency | Country (Region) | Alias
+FX | ISO Code | Full Name | Alias Support
 :-|:-|:-|:-
 `GBP` | Pound | The United Kingdom | `gbp`/`UK`/`uk`
 `EUR` | Euro | European Union | `eur`/`EU`/`eu`
@@ -229,7 +229,8 @@ Parameter | Currency | Country (Region) | Alias
 `AED` | United Arab Emirates Dirham | United Arab Emirates | `aed`
 `SAR` | Saudi Riyal | Saudi Arabia | `sar`
 
-If not using this option, the default parameters will be `GBP, EUR, USD, CAD, AUD`.
+This parameter is case-insensitive, e.g. `GBP`, `gBp`, `UK`, `uk` will get same output.
+If not using this opinion, the default parameter will be `GBP, EUR, USD, CAD, AUD`.
 <br>
 <br>
 

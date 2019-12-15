@@ -46,20 +46,23 @@ Author: [**Bob Lee**](https://boblee.cn)
 <br>
 
 # Installation
+# 安装
 
 Generally, one line command can perfect installation.
 ```
 pip3 install bocfx 
 ```  
 If your `pip` links python3, please use `pip install bocfx` to install bocfx.   
-REMEMBER, Bocfx may not support python2.  
+**REMEMBER**, Bocfx may not support python2.  
 <br>
 <br>
 
 # Basic Usage
+# 基本用法 (输出最新的牌价)
 <br>
 
 ## As a command-line application
+## 作为命令行工具使用
 
 ```
 BOBMAC:~ bobleer$ bocfx                        
@@ -79,24 +82,34 @@ BOBMAC:~ bobleer$ bocfx
 <br>
 <br>
 
-## As a python module
+## As a Python module
+## 作为 Python 模块导入使用
 
 ```
 >>> from bocfx import bocfx
 
->>> output = bocfx('GBP,USD','SE,ASK')
+>>> output = bocfx('GBP,USD','SE,ASK') # 选择了英镑和美元，现汇卖出价
 100%|████████████████████████████████████████████| 5/5 [00:00<00:00, 532.87it/s]
 
 >>> output # The latest foreign exchange rate
-['879.96', '672.28']
+['879.96', '672.28'] # 英镑和美元，现汇卖出价 (最新的牌价)
 ```
 <br>
 <br>
 
 # Advanced Usage
+# 进阶用法
 <br>
 
 ## As a command-line application
+## 作为命令行工具使用时
+
+`-f` | 可选外汇 | FX selection
+`-s` | 可选牌价 | Quotation types selection
+`-t` | 可选时间 | Time / Period selection
+`-p` | 输出波动图 | Output plot
+`-c` | 输出csv | Output csv table
+`-o` | 指定输出路径 | Set output path
 
 ```Bash
 bocfx [-f|--fx] [-s|--sort] [-t|--time] (-p|--plot) (-c|--csv) {-o|--op}
@@ -191,6 +204,7 @@ Plot has already saved to /Users/bob/desktop/example/[GBP+USD]SE_BID+SE_ASK_2018
 <br>
 
 # Option and parameter
+# 选项和参数
 <br>
 
 ## Option 1 `-f`/`--fx`
@@ -282,7 +296,7 @@ If not using this option, the default parameter will be `GBP, EUR, USD, CAD, AUD
 ## Option 2 `-s`/`--sort`
 ## 牌价种类
 
-`-s`/`--sort` is the filter of foreign exchange quotation. This opinion supports **multi-parameter**.
+`-s`/`--sort` is the filter of quotation types. This opinion supports **multi-parameter**.
 
 `,` is the separator of each parameter.
 

@@ -12,7 +12,7 @@ Author: [**Bob Lee**](https://boblee.cn)
 * [x] **As a python module 支持模块导入模式（import到你自己的项目里就能作API了）**
 * [x] **Foreign exchange selection 支持多种外汇币种同时输出（默认是英、欧、美、加、澳）**
 * [x] **Foreign exchange quotation filter 支持外汇牌价种类同时输出（买入、卖出、现钞、现汇）**
-* [x] **Date selection (Realtime/History) 支持按时间/时间段筛选**
+* [x] **Date selection (Realtime/History) 支持仅输出最新牌价 或 输出指定时间段内全部牌价变动**
 * [x] **Line graph generation 支持生成历史波动曲线**
 * [x] **.csv generation 支持导出csv格式表格文件**
 * [x] **Set output path 支持导出到指定路径**

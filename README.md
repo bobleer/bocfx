@@ -346,7 +346,7 @@ If not using this option, the default output will include all four sorts.
 
 There are 3 ways to write parameter.
 
- No. | Example | Definition | 中文介绍
+ No. | Example | Definition | 定义
  :-|:-|:-|:-
  1 | `6` | Get data from 6 days ago to today | 6 天之内的全部历史价格
  2 | `2019-02-20` | Get data from 2019-02-20 to today | 选定时间到今天的全部历史价格

@@ -1,4 +1,4 @@
-# bocfx ![](https://img.shields.io/badge/License-MIT-green.svg) ![](https://img.shields.io/badge/Python-3-blue.svg) ![](https://img.shields.io/badge/PyPI-0.7.0-orange.svg)
+# bocfx ![](https://img.shields.io/badge/License-MIT-green.svg) ![](https://img.shields.io/badge/Python-3-blue.svg) ![](https://img.shields.io/badge/PyPI-0.7.3-orange.svg)
 An easy-to-use python package for getting foreign exchange rate from Bank of China (BOC).  
 一个帮你快速获取中国银行外汇牌价的 Python 爬虫（也可作外汇牌价API)。  
 Author: [**Bob Lee**](https://boblee.cn)
@@ -393,7 +393,7 @@ This package is no-database design.
 
 All data are captured from http://srh.bankofchina.com/search/whpj/search.jsp in real time.  
 
-**Thus, the speed of spider will be strongly influenced by the connectation quality!**
+**Thus, the speed of spider will be strongly influenced by the connectation quality!**  
 **本脚本会受 中国银行官网接口速度 的影响！**
 <br>
 <br>

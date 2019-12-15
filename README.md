@@ -211,7 +211,7 @@ Plot has already saved to /Users/bob/desktop/example/[GBP+USD]SE_BID+SE_ASK_2018
 ## 外汇种类
 `-f`/`--fx` is the BOC foreign excahnge selector. This opinion supports **multi-parameter**.
 
-`,` is the separator of each parameter, e.g. `GBP, USD`
+`,` is the separator of each parameter, e.g. `GBP,USD`
 <br>
 <br>
 

@@ -91,8 +91,8 @@ BOBMAC:~ bobleer$ bocfx
 >>> output = bocfx('GBP,USD','SE,ASK') # 选择了英镑和美元，现汇卖出价
 100%|████████████████████████████████████████████| 5/5 [00:00<00:00, 532.87it/s]
 
->>> output # The latest foreign exchange rate
-['879.96', '672.28'] # 英镑和美元，现汇卖出价 (最新的牌价)
+>>> output # The latest foreign exchange rate | 英镑和美元，现汇卖出价 (最新的牌价)
+['879.96', '672.28'] 
 ```
 <br>
 <br>

@@ -194,20 +194,20 @@ Plot has already saved to /Users/bob/desktop/example/[GBP+USD]SE_BID+SE_ASK_2018
 <br>
 
 ## Option 1 `-f`/`--fx`
-
+## 外汇种类
 `-f`/`--fx` is the BOC foreign excahnge selector. This opinion supports **multi-parameter**.
 
-`,` is the separator of each parameter.
+`,` is the separator of each parameter, e.g. `GBP, USD`
 <br>
 <br>
 
-#### Common foreign currency:
+#### Supported foreign currency:
   
 FX | ISO Code | Full Name | Alias
 :-|:-|:-|:-
 `英镑` | `GBP` | Great Britain Pound | `UK` 
 `港币` | `HKD` | Hong Kong Dollar | `HK` 
-`美元` | `USD` | United States Dollar | `US` 
+`美元` | `USD` | United States Dollar | `US`/`USA` 
 `瑞士法郎` | `CHF` | Swiss Franc | 
 `德国马克` | `DEM` | Deutsche Mark | 
 `法国法郎` | `FRF` | French Franc | `FF` 
@@ -219,7 +219,7 @@ FX | ISO Code | Full Name | Alias
 `加拿大元` | `CAD` | Canadian Dollar | `CA` 
 `澳大利亚元` | `AUD` | Australian Dollar | `AU` 
 `欧元` | `EUR` | Euro | `EU` 
-`澳门元` | `MOP` | Macao Pataca | 
+`澳门元` | `MOP` | Macao Pataca | `MO`
 `菲律宾比索` | `PHP` | Philippine Peso | 
 `泰国铢` | `THB` | Thai Baht | 
 `新西兰元` | `NZD` | New Zealand Dollar | `KIWI` 
@@ -280,17 +280,18 @@ If not using this option, the default parameter will be `GBP, EUR, USD, CAD, AUD
 <br>
 
 ## Option 2 `-s`/`--sort`
+## 牌价种类
 
 `-s`/`--sort` is the filter of foreign exchange quotation. This opinion supports **multi-parameter**.
 
 `,` is the separator of each parameter.
 
-`-s`/`--sort` | `SE` Spot Exchange | `BN` Banknote
+`-s`/`--sort` | `SE` Spot Exchange 现汇价 | `BN` Banknote 现钞价
  :-|:-|:-
- `BID` Bid Price | `SE,BID` SE_BID | `BN,BID` BN_BID 
- `ASK` Ask Price | `SE,ASK` SE_ASK | `BN,ASK` BN_ASK
+ `BID` Bid Price 买入价 | `SE,BID` SE_BID | `BN,BID` BN_BID 
+ `ASK` Ask Price 卖出价 | `SE,ASK` SE_ASK | `BN,ASK` BN_ASK
 
-If not using this option, the default output will include all prices.
+If not using this option, the default output will include all four sorts.
 <br>
 <br>
 
@@ -325,23 +326,24 @@ If not using this option, the default output will include all prices.
 <br>
 
 ## Option 3 `-t`/`--time`
+## 时间范围选择
 
 `-t`/`--time` can filter the date of foreign exchange quotation.
 
 There are 3 ways to write parameter.
 
- No. | Example | Definition
- :-|:-|:-
- 1 | `6` | Get data from 6 days ago to today
- 2 | `2019-02-20` | Get data from 2019-02-20 to today
- 3 | `2019-02-20,2019-02-21` | Get data from 2019-02-20 to 2019-02-21
+ No. | Example | Definition | 中文介绍
+ :-|:-|:-|:-
+ 1 | `6` | Get data from 6 days ago to today | 6 天之内的全部历史价格
+ 2 | `2019-02-20` | Get data from 2019-02-20 to today | 选定时间到今天的全部历史价格
+ 3 | `2019-02-20,2019-02-21` | Get data from 2019-02-20 to 2019-02-21 | 选定时间范围内全部历史价格
  
-If not using this option, **only the latest quotation** will be output.
-<br>
+If not using this option, **only one price (the latest quotation price)** will be output.
 <br>
 <br>
 
 ## Option 4 `-p`/`--plot`
+## 是否生成折线图
 
 Using `-p`/`--plot` can generate a line graph with .png format.
 
@@ -351,6 +353,7 @@ The default output path is `~/bocfx_output/`
 <br>
 
 ## Option 5 `-c`/`--csv`
+## 是否生成csv表格
 
 Using `-c`/`--csv` can output data in .csv format.
 
@@ -360,6 +363,7 @@ The default output path is `~/bocfx_output/`
 <br>
 
 ## Option 6 `-o`/`--op`
+## 自定义输出路径
 
 Using `-o`/`--op` can change default output path.
 
@@ -369,12 +373,14 @@ Example: `-o '~/desktop/example/'`
 <br>
 
 # Limitation
+# 局限性
 
 This package is no-database design.   
 
 All data are captured from http://srh.bankofchina.com/search/whpj/search.jsp in real time.  
 
 **Thus, the speed of spider will be strongly influenced by the connectation quality!**
+**本脚本会受 中国银行官网接口速度 的影响！**
 <br>
 <br>
 <br>

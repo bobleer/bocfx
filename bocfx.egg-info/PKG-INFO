@@ -1,14 +1,14 @@
 Metadata-Version: 2.1
 Name: bocfx
-Version: 0.7.3
+Version: 0.7.4
 Summary: Easy API to get foreign exchange rate from Bank of China.
 Home-page: https://github.com/bobleer/bocfx
 Author: bobleer
 Author-email: liwenbo628@gmail.com
 License: UNKNOWN
-Description: # bocfx ![](https://img.shields.io/badge/License-MIT-green.svg) ![](https://img.shields.io/badge/Python-3-blue.svg) ![](https://img.shields.io/badge/PyPI-0.7.0-orange.svg)
+Description: # bocfx ![](https://img.shields.io/badge/License-MIT-green.svg) ![](https://img.shields.io/badge/Python-3-3776ab.svg) ![](https://img.shields.io/badge/PyPI-0.7.3-ffd242.svg)
         An easy-to-use python package for getting foreign exchange rate from Bank of China (BOC).  
-        一个帮你快速获取中国银行外汇牌价的 Python 爬虫（也可作外汇牌价API)。  
+        一个帮你快速获取中国银行外汇牌价的 Python 爬虫（也可作外汇牌价实时查询API)。  
         Author: [**Bob Lee**](https://boblee.cn)
         <br>
         <br>
@@ -20,11 +20,12 @@ Description: # bocfx ![](https://img.shields.io/badge/License-MIT-green.svg) ![]
         * [x] **As a python module 支持模块导入模式（import到你自己的项目里就能作API了）**
         * [x] **Foreign exchange selection 支持多种外汇币种同时输出（默认是英、欧、美、加、澳）**
         * [x] **Foreign exchange quotation filter 支持外汇牌价种类同时输出（买入、卖出、现钞、现汇）**
-        * [x] **Date selection (Realtime/History) 支持按时间/时间段筛选**
+        * [x] **Date selection (Realtime/History) 支持仅输出最新牌价 或 输出指定时间段内全部牌价变动**
         * [x] **Line graph generation 支持生成历史波动曲线**
         * [x] **.csv generation 支持导出csv格式表格文件**
         * [x] **Set output path 支持导出到指定路径**
-        * [ ] **Export to database 支持导出到数据库（开发中）**
+        * [x] **Show or close loading bar 支持显示或关闭进度条**
+        * [x] **Export to database 支持导出到数据库（可使用Pandas的df.to_sql()）**
         
         <br>
         
@@ -354,7 +355,7 @@ Description: # bocfx ![](https://img.shields.io/badge/License-MIT-green.svg) ![]
         
         There are 3 ways to write parameter.
         
-         No. | Example | Definition | 中文介绍
+         No. | Example | Definition | 定义
          :-|:-|:-|:-
          1 | `6` | Get data from 6 days ago to today | 6 天之内的全部历史价格
          2 | `2019-02-20` | Get data from 2019-02-20 to today | 选定时间到今天的全部历史价格
@@ -401,7 +402,7 @@ Description: # bocfx ![](https://img.shields.io/badge/License-MIT-green.svg) ![]
         
         All data are captured from http://srh.bankofchina.com/search/whpj/search.jsp in real time.  
         
-        **Thus, the speed of spider will be strongly influenced by the connectation quality!**
+        **Thus, the speed of spider will be strongly influenced by the connectation quality!**  
         **本脚本会受 中国银行官网接口速度 的影响！**
         <br>
         <br>

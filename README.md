@@ -16,7 +16,8 @@ Author: [**Bob Lee**](https://boblee.cn)
 * [x] **Line graph generation 支持生成历史波动曲线**
 * [x] **.csv generation 支持导出csv格式表格文件**
 * [x] **Set output path 支持导出到指定路径**
-* [ ] **Export to database 支持导出到数据库（开发中）**
+* [x] **Show or close loading bar 支持显示或关闭进度条**
+* [x] **Export to database 支持导出到数据库（可使用Pandas的df.to_sql()）**
 
 <br>
 

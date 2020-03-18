@@ -1,4 +1,4 @@
-# bocfx ![](https://img.shields.io/badge/License-MIT-green.svg) ![](https://img.shields.io/badge/Python-3-3776ab.svg) ![](https://img.shields.io/badge/PyPI-0.7.3-ffd242.svg)
+# bocfx ![](https://img.shields.io/badge/License-MIT-green.svg) ![](https://img.shields.io/badge/Python-3-3776ab.svg) ![](https://img.shields.io/badge/PyPI-0.7.4-ffd242.svg)
 An easy-to-use python package for getting foreign exchange rate from Bank of China (BOC).  
 一个帮你快速获取中国银行外汇牌价的 Python 爬虫（也可作外汇牌价实时查询API)。  
 Author: [**Bob Lee**](https://boblee.cn)
@@ -42,6 +42,7 @@ Author: [**Bob Lee**](https://boblee.cn)
 	- [Option 4 `-p`/`--plot` 画图](#option-4--p--plot)
 	- [Option 5 `-c`/`--csv` 导出csv表格](#option-5--c--csv)
 	- [Option 6 `-o`/`--op` 导出文件路径设置](#option-6--o--op)
+	- [Option 7 `-b`/`--bar` 开启进度条显示](#option-7--b--bar)
 - [Limitation 局限性](#limitation)
 - [MIT Licence](#mit-licence)
 <br>
@@ -383,6 +384,14 @@ The default output path is `~/bocfx_output/`
 Using `-o`/`--op` can change default output path.
 
 Example: `-o '~/desktop/example/'`
+<br>
+<br>
+<br>
+
+## Option 7 `-b`/`--bar`
+## 开启进度条显示
+
+Using `-b`/`--bar` can show loading bar while the tasks are running.
 <br>
 <br>
 <br>

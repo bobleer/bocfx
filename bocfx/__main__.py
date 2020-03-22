@@ -7,7 +7,7 @@
 
 import getopt
 import sys
-import time
+import time as tm
 import os
 import requests
 
@@ -71,7 +71,7 @@ def page_get(output, sort, FX_or, erectDate, nothing, FX, i, page, end):
     except:
         print("Internet Error, waiting 2s.\n")
         error_times += 1
-        time.sleep(2)
+        tm.sleep(2)
         while error_times <= 3:
             r = requests.post('https://srh.bankofchina.com/search/whpj/search_cn.jsp', data = {'erectDate':erectDate, 'nothing':nothing, 'pjname':str(FX[i]), 'page':str(page)})
         else:

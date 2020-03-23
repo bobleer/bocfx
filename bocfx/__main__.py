@@ -59,7 +59,14 @@ def asexec():
 
 
 def bocfx(FX=0, sort=0, time=-1, plot=0, csv=0, pt=0, op='~/bocfx_output', bar=0):
-
+    if FX == None: FX = 0
+    if sort == None: sort = 0
+    if time == None: time = -1
+    if plot == None: plot = 0
+    if csv == None: csv = 0
+    if pt == None: pt = 0
+    if op == None: op = '~/bocfx_output'
+    if bar == None: bar = 0
     output = main(FX, sort, time, plot, csv, pt, op, bar)
     return output
 

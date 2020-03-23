@@ -11,8 +11,8 @@ Author: [**Bob Lee**](https://boblee.cn)
 Parameter | Examples
 :-|:-
 FX= | ` `, `GBP`, `GBP,USD,AUD` 
-sort= | ` `, `SE`,`BN`,`ASK`, `BID`, `SE,ASK`, `SE,BID`, `BN,ASK`, `BN,BID`
-time= | ` `, `1`,`2020-03-01`, `2020-03-01,2020-03-12`
+sort= | ` `, `SE`, `BN`, `ASK`, `BID`, `SE,ASK`, `SE,BID`, `BN,ASK`, `BN,BID`
+time= | ` `, `1`, `2020-03-01`, `2020-03-01,2020-03-12`
 format= | `json`, `csv`, `original`
   
 Description of each parameter can be found below.  

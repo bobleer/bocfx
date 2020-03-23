@@ -6,7 +6,7 @@ Author: [**Bob Lee**](https://boblee.cn)
 <br>
 # API Demo 
 
-***HTTP GET (Just for test)*** http://sh.boblee.cn:8080/apis/bocfx?FX=GBP,USD&sort=SE&time=&format=json
+***HTTP GET (Just for test):*** http://sh.boblee.cn:8080/apis/bocfx?FX=GBP,USD&sort=SE&time=&format=json
 
 Parameter | Examples
 :-|:-

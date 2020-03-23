@@ -4,16 +4,16 @@ An easy-to-use python package for getting foreign exchange rate from Bank of Chi
 Author: [**Bob Lee**](https://boblee.cn)
 <br>
 <br>
-# API Demo 
+# API Demo (temporary)
 
-***HTTP GET (Just for test):*** http://sh.boblee.cn:8080/apis/bocfx?FX=GBP,USD&sort=SE&time=&format=json
+***HTTP GET:*** http://sh.boblee.cn:8080/apis/bocfx?FX=GBP,USD&sort=SE&time=&format=json
 
 Parameter | Examples
 :-|:-
-FX= | ` `, `GBP`, `GBP,USD,AUD` 
-sort= | ` `, `SE`, `BN`, `ASK`, `BID`, `SE,ASK`, `SE,BID`, `BN,ASK`, `BN,BID`
-time= | ` `, `1`, `2020-03-01`, `2020-03-01,2020-03-12`
-format= | `json`, `csv`, `original`
+FX= | ` (Blank = GBP,EUR,USD,CAD,AUD)`, `GBP`, `GBP,USD,AUD` 
+sort= | ` (Blank = ALL four types)`, `SE`, `BN`, `ASK`, `BID`, `SE,ASK`, `SE,BID`, `BN,ASK`, `BN,BID`
+time= | ` (Blank = The latest record)`, `1`, `2020-03-01`, `2020-03-01,2020-03-12`
+format= | ` (Blank = json)`, `json`, `csv`, `original`
   
 Description of each parameter can be found below.  
 每个参数的含义可参见下方的介绍.

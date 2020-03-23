@@ -16,7 +16,7 @@ time= | ` `,`1`,`2020-03-01`,`2020-03-01,2020-03-12`
 format= | `json`,`csv`,`original`
   
 Description of ach parameter can be found below.
-每个参数的具体可参见下方的介绍.
+每个参数的含义可参见下方的介绍.
 
 <br>
 

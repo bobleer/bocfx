@@ -4,9 +4,9 @@ An easy-to-use python package for getting foreign exchange rate from Bank of Chi
 Author: [**Bob Lee**](https://boblee.cn)
 <br>
 <br>
-# API Demo (Just for test)
+# API Demo 
 
-<HTTP GET> http://sh.boblee.cn:8080/apis/bocfx?FX=GBP,USD&sort=SE&time=&format=json
+***HTTP GET (Just for test)*** http://sh.boblee.cn:8080/apis/bocfx?FX=GBP,USD&sort=SE&time=&format=json
 
 Parameter | Examples
 :-|:-

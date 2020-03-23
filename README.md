@@ -4,7 +4,7 @@ An easy-to-use python package for getting foreign exchange rate from Bank of Chi
 Author: [**Bob Lee**](https://boblee.cn)
 <br>
 <br>
-# API Demo
+# API Demo (Just for test)
 
 <HTTP GET> http://sh.boblee.cn:8080/apis/bocfx?FX=GBP,USD&sort=SE&time=&format=json
 
@@ -15,7 +15,7 @@ sort= | ` `,`SE`,`BN`,`ASK`,`BID`,`SE,ASK`,`SE,BID`,`BN,ASK`,`BN,BID`
 time= | ` `,`1`,`2020-03-01`,`2020-03-01,2020-03-12`
 format= | `json`,`csv`,`original`
   
-Description of ach parameter can be found below.
+Description of ach parameter can be found below.  
 每个参数的含义可参见下方的介绍.
 
 <br>

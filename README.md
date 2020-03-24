@@ -12,7 +12,7 @@ Parameter | Examples
 :-|:-
 FX= | ` (Blank = GBP,EUR,USD,CAD,AUD)`, `GBP`, `GBP,USD,AUD` 
 sort= | ` (Blank = ALL four types)`, `SE`, `BN`, `ASK`, `BID`, `SE,ASK`, `SE,BID`, `BN,ASK`, `BN,BID`
-time= | ` (Blank = The latest record)`, `1`, `2020-03-01`, `2020-03-01,2020-03-12`
+time= | ` (Blank = The latest record)`, `1`, `2020-03-07`, `2020-03-07,2020-03-14`
 format= | ` (Blank = json)`, `json`, `csv`, `original`
   
 Description of each parameter can be found below.  

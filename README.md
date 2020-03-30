@@ -2,21 +2,6 @@
 An easy-to-use python package for getting foreign exchange rate from Bank of China (BOC).  
 一个帮你快速获取中国银行外汇牌价的 Python 爬虫（也可作外汇牌价实时查询API)。  
 Author: [**Bob Lee**](https://boblee.cn)
-<br>
-<br>
-# API Demo (temporary)
-
-***HTTP GET:*** http://sh.boblee.cn:8080/apis/bocfx?FX=GBP,USD&sort=SE&time=&format=json
-
-Parameter | Examples
-:-|:-
-FX= | ` (Blank = GBP,EUR,USD,CAD,AUD)`, `GBP`, `GBP,USD,AUD` 
-sort= | ` (Blank = ALL four types)`, `SE`, `BN`, `ASK`, `BID`, `SE,ASK`, `SE,BID`, `BN,ASK`, `BN,BID`
-time= | ` (Blank = The latest record)`, `1`, `2020-03-07`, `2020-03-07,2020-03-14`
-format= | ` (Blank = json)`, `json`, `csv`, `original`
-  
-Description of each parameter can be found below.  
-每个参数的含义可参见下方的介绍.
 
 <br>
 
@@ -412,6 +397,23 @@ Using `-b`/`--bar` can show loading bar while the tasks are running.
 <br>
 <br>
 <br>
+
+# Web API (temporary demo)
+
+***HTTP GET:*** http://sh.boblee.cn:8080/apis/bocfx?FX=GBP,USD&sort=SE&time=&format=json
+
+Parameter | Examples
+:-|:-
+FX= | ` (Blank = GBP,EUR,USD,CAD,AUD)`, `GBP`, `GBP,USD,AUD` 
+sort= | ` (Blank = ALL four types)`, `SE`, `BN`, `ASK`, `BID`, `SE,ASK`, `SE,BID`, `BN,ASK`, `BN,BID`
+time= | ` (Blank = The latest record)`, `1`, `2020-03-07`, `2020-03-07,2020-03-14`
+format= | ` (Blank = json)`, `json`, `csv`, `original`
+  
+Description of each parameter can be found below.  
+每个参数的含义可参见下方的介绍.
+
+<br>
+
 
 # Limitation
 # 局限性

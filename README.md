@@ -412,7 +412,7 @@ Using `-b`/`--bar` can show loading bar while the tasks are running.
 <br>
 <br>
 
-# Web API (temporary demo)
+# Web API (temporary demo) (discarded now)
 
 ***HTTP GET:*** http://sh.boblee.cn:8080/apis/bocfx?FX=GBP,USD&sort=SE&time=&format=json
 
@@ -423,8 +423,8 @@ sort= | ` (Blank = ALL four types)`, `SE`, `BN`, `ASK`, `BID`, `SE,ASK`, `SE,BID
 time= | ` (Blank = The latest record)`, `1`, `2020-03-07`, `2020-03-07,2020-03-14`
 format= | ` (Blank = json)`, `json`, `csv`, `original`
   
-Description of each parameter can be found below.  
-每个参数的含义可参见下方的介绍.
+Description of each parameter can be found .  
+每个参数的含义可参见上方的介绍.
 
 <br>
 

@@ -70,7 +70,7 @@ If your `pip` links python3, please use `pip install bocfx` to install bocfx.
 ## 作为命令行工具使用
 
 ```
-BOBMAC:~ bobleer$ bocfx                        
+❯ bocfx                        
 100%|████████████████████████████████████████████| 5/5 [00:00<00:00, 471.66it/s]
 
 +-----+--------+--------+--------+--------+---------------------+

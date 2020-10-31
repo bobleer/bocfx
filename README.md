@@ -2,21 +2,6 @@
 An easy-to-use python package for getting foreign exchange rate from Bank of China (BOC).  
 一个帮你快速获取中国银行外汇牌价的 Python 爬虫（也可作外汇牌价实时查询API)。  
 Author: [**Bob Lee**](https://boblee.cn)
-<br>
-<br>
-# API Demo (temporary)
-
-***HTTP GET:*** http://sh.boblee.cn:8080/apis/bocfx?FX=GBP,USD&sort=SE&time=&format=json
-
-Parameter | Examples
-:-|:-
-FX= | ` (Blank = GBP,EUR,USD,CAD,AUD)`, `GBP`, `GBP,USD,AUD` 
-sort= | ` (Blank = ALL four types)`, `SE`, `BN`, `ASK`, `BID`, `SE,ASK`, `SE,BID`, `BN,ASK`, `BN,BID`
-time= | ` (Blank = The latest record)`, `1`, `2020-03-07`, `2020-03-07,2020-03-14`
-format= | ` (Blank = json)`, `json`, `csv`, `original`
-  
-Description of each parameter can be found below.  
-每个参数的含义可参见下方的介绍.
 
 <br>
 
@@ -60,6 +45,7 @@ Description of each parameter can be found below.
 	- [Option 5 `-c`/`--csv` 导出csv表格](#option-5--c--csv)
 	- [Option 6 `-o`/`--op` 导出文件路径设置](#option-6--o--op)
 	- [Option 7 `-b`/`--bar` 开启进度条显示](#option-7--b--bar)
+- [Web API (temporary demo)](#web-api-temporary-demo)
 - [Limitation 局限性](#limitation)
 - [MIT Licence](#mit-licence)
 <br>
@@ -84,7 +70,7 @@ If your `pip` links python3, please use `pip install bocfx` to install bocfx.
 ## 作为命令行工具使用
 
 ```
-BOBMAC:~ bobleer$ bocfx                        
+❯ bocfx                        
 100%|████████████████████████████████████████████| 5/5 [00:00<00:00, 471.66it/s]
 
 +-----+--------+--------+--------+--------+---------------------+
@@ -98,6 +84,19 @@ BOBMAC:~ bobleer$ bocfx
 +-----+--------+--------+--------+--------+---------------------+
 (SE = Spot Exchange, BN = Banknote)
 ```
+
+```
+❯ bocfx -f USD                
+
+
++-----+--------+--------+--------+--------+---------------------+
+|  1  | SE_BID | BN_BID | SE_ASK | BN_ASK |         Time        |
++-----+--------+--------+--------+--------+---------------------+
+| USD | 682.91 | 677.36 | 685.81 | 685.81 | 2020-09-06 10:30:00 |
++-----+--------+--------+--------+--------+---------------------+
+(SE = Spot Exchange, BN = Banknote)
+```
+
 <br>
 <br>
 
@@ -412,6 +411,23 @@ Using `-b`/`--bar` can show loading bar while the tasks are running.
 <br>
 <br>
 <br>
+
+# Web API (temporary demo) (discarded now)
+
+***HTTP GET:*** http://sh.boblee.cn:8080/apis/bocfx?FX=GBP,USD&sort=SE&time=&format=json
+
+Parameter | Examples
+:-|:-
+FX= | ` (Blank = GBP,EUR,USD,CAD,AUD)`, `GBP`, `GBP,USD,AUD` 
+sort= | ` (Blank = ALL four types)`, `SE`, `BN`, `ASK`, `BID`, `SE,ASK`, `SE,BID`, `BN,ASK`, `BN,BID`
+time= | ` (Blank = The latest record)`, `1`, `2020-03-07`, `2020-03-07,2020-03-14`
+format= | ` (Blank = json)`, `json`, `csv`, `original`
+  
+Description of each parameter can be found .  
+每个参数的含义可参见上方的介绍.
+
+<br>
+
 
 # Limitation
 # 局限性

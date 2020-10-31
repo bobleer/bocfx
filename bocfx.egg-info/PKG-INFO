@@ -1,6 +1,6 @@
 Metadata-Version: 2.1
 Name: bocfx
-Version: 0.7.7
+Version: 0.7.8
 Summary: Easy API to get foreign exchange rate from Bank of China.
 Home-page: https://github.com/bobleer/bocfx
 Author: bobleer
@@ -12,8 +12,24 @@ Description: # bocfx ![](https://img.shields.io/badge/License-MIT-green.svg) ![]
         Author: [**Bob Lee**](https://boblee.cn)
         <br>
         <br>
+        # API Demo (temporary)
+        
+        ***HTTP GET:*** http://sh.boblee.cn:8080/apis/bocfx?FX=GBP,USD&sort=SE&time=&format=json
+        
+        Parameter | Examples
+        :-|:-
+        FX= | ` (Blank = GBP,EUR,USD,CAD,AUD)`, `GBP`, `GBP,USD,AUD` 
+        sort= | ` (Blank = ALL four types)`, `SE`, `BN`, `ASK`, `BID`, `SE,ASK`, `SE,BID`, `BN,ASK`, `BN,BID`
+        time= | ` (Blank = The latest record)`, `1`, `2020-03-07`, `2020-03-07,2020-03-14`
+        format= | ` (Blank = json)`, `json`, `csv`, `original`
+          
+        Description of each parameter can be found below.  
+        每个参数的含义可参见下方的介绍.
+        
+        <br>
         
         # Features
+        # 特点
         
         * [x] **Multithreading 多线程**
         * [x] **As a command-line application 支持命令行应用模式**
@@ -30,6 +46,7 @@ Description: # bocfx ![](https://img.shields.io/badge/License-MIT-green.svg) ![]
         <br>
         
         # Contents
+        # 目录
         
         - [Installation 安装](#installation)
         - [Basic Usage 基本用法](#basic-usage)

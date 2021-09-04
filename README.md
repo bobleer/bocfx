@@ -274,7 +274,7 @@ FX | ISO Code | Full Name | Alias
   
 FX, ISO and Alias can be used as values of this option, e.g. `英镑`, `GBP`, `UK` are all correct.  
 This parameter is case-insensitive, e.g. `GBP`, `gBp`, `UK`, `uk` will get same output.  
-If not using this option, the default parameter will be `GBP, EUR, USD, CAD, AUD`.  
+If not setting this parameter, the default value of parameter will be `GBP, EUR, USD, CAD, AUD`.  
 <br>
 <br>
 

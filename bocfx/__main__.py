@@ -71,6 +71,12 @@ def bocfx(FX=0, sort=0, time=-1, plot=0, csv=0, pt=0, op='~/bocfx_output', bar=0
     return output
 
 
+def strip_s(s: str):
+    s = s.replace('\r', '')
+    s = s.replace('\n', '')
+    return s.strip()
+
+
 def page_get(output, sort, FX_or, erectDate, nothing, FX, i, page, end):
     error_times = 0
     try:
@@ -88,11 +94,11 @@ def page_get(output, sort, FX_or, erectDate, nothing, FX, i, page, end):
     html = r.text
     for row in range(2,end):
         try:
-            SE_B = Selector(text=html).xpath('//tr[%i]/td[2]/text()' % (row)).extract()[0]
-            BN_B = Selector(text=html).xpath('//tr[%i]/td[3]/text()' % (row)).extract()[0]
-            SE_A = Selector(text=html).xpath('//tr[%i]/td[4]/text()' % (row)).extract()[0]
-            BN_A = Selector(text=html).xpath('//tr[%i]/td[5]/text()' % (row)).extract()[0]
-            time = Selector(text=html).xpath('//tr[%i]/td[7]/text()' % (row)).extract()[0].replace('.','-')
+            SE_B = strip_s(Selector(text=html).xpath('//tr[%i]/td[2]/text()' % (row)).extract()[0])
+            BN_B = strip_s(Selector(text=html).xpath('//tr[%i]/td[3]/text()' % (row)).extract()[0])
+            SE_A = strip_s(Selector(text=html).xpath('//tr[%i]/td[4]/text()' % (row)).extract()[0])
+            BN_A = strip_s(Selector(text=html).xpath('//tr[%i]/td[5]/text()' % (row)).extract()[0])
+            time = strip_s(Selector(text=html).xpath('//tr[%i]/td[7]/text()' % (row)).extract()[0].replace('.', '-'))
             output.append(eval(sort))
 
         except IndexError:

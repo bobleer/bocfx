@@ -88,11 +88,11 @@ def page_get(output, sort, FX_or, erectDate, nothing, FX, i, page, end):
     html = r.text
     for row in range(2,end):
         try:
-            SE_B = Selector(text=html).xpath('//tr[%i]/td[2]/text()' % (row)).extract()[0]
-            BN_B = Selector(text=html).xpath('//tr[%i]/td[3]/text()' % (row)).extract()[0]
-            SE_A = Selector(text=html).xpath('//tr[%i]/td[4]/text()' % (row)).extract()[0]
-            BN_A = Selector(text=html).xpath('//tr[%i]/td[5]/text()' % (row)).extract()[0]
-            time = Selector(text=html).xpath('//tr[%i]/td[7]/text()' % (row)).extract()[0].replace('.','-')
+            SE_B = Selector(text=html).xpath('//tr[%i]/td[2]/text()' % (row)).extract()[0].strip('\r\n\t ')
+            BN_B = Selector(text=html).xpath('//tr[%i]/td[3]/text()' % (row)).extract()[0].strip('\r\n\t ')
+            SE_A = Selector(text=html).xpath('//tr[%i]/td[4]/text()' % (row)).extract()[0].strip('\r\n\t ')
+            BN_A = Selector(text=html).xpath('//tr[%i]/td[5]/text()' % (row)).extract()[0].strip('\r\n\t ')
+            time = Selector(text=html).xpath('//tr[%i]/td[7]/text()' % (row)).extract()[0].replace('.','-').strip('\r\n\t ')
             output.append(eval(sort))
 
         except IndexError:

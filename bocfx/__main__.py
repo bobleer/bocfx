@@ -2,8 +2,8 @@
 # coding: utf-8
 # Author: Bob Lee
 # Blog: https://boblee.cn
-# Version: 0.7.8
-# Date: 2020-11-01
+# Version: 0.7.9
+# Date: 2022-06-04
 
 import getopt
 import sys

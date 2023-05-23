@@ -92,6 +92,7 @@ def page_get(output, sort, FX_or, erectDate, nothing, FX, i, page, end):
             BN_B = Selector(text=html).xpath('//tr[%i]/td[3]/text()' % (row)).extract()[0].strip('\r\n\t ')
             SE_A = Selector(text=html).xpath('//tr[%i]/td[4]/text()' % (row)).extract()[0].strip('\r\n\t ')
             BN_A = Selector(text=html).xpath('//tr[%i]/td[5]/text()' % (row)).extract()[0].strip('\r\n\t ')
+            BOC_C = Selector(text=html).xpath('//tr[%i]/td[6]/text()' % (row)).extract()[0].strip('\r\n\t ')
             time = Selector(text=html).xpath('//tr[%i]/td[7]/text()' % (row)).extract()[0].replace('.','-').strip('\r\n\t ')
             output.append(eval(sort))
 
@@ -160,8 +161,8 @@ def main(FX, sort, time, plot, csv, pt, op, bar):
             exit()
 
     else:
-        sort = '(FX_or[i],SE_B,BN_B,SE_A,BN_A,time)'
-        output = [(len(FX),'SE_BID','BN_BID','SE_ASK','BN_ASK','Time')]
+        sort = '(FX_or[i],SE_B,BN_B,SE_A,BN_A,BOC_C,time)'
+        output = [(len(FX),'SE_BID','BN_BID','SE_ASK','BN_ASK', 'BOC_CONV','Time')]
 
 
     if time != -1:

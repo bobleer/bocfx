@@ -1,4 +1,4 @@
-# bocfx ![](https://img.shields.io/badge/License-MIT-green.svg) ![](https://img.shields.io/badge/Python-3-3776ab.svg) ![](https://img.shields.io/badge/PyPI-0.7.9-ffd242.svg)
+# bocfx ![](https://img.shields.io/badge/License-MIT-green.svg) ![](https://img.shields.io/badge/Python-3-3776ab.svg) ![](https://img.shields.io/badge/PyPI-0.8.0-ffd242.svg)
 An easy-to-use python package for getting foreign exchange rate from Bank of China (BOC).  
 一个帮你快速获取中国银行外汇牌价的 Python 爬虫（也可作外汇牌价实时查询API)。  
 Author: [**Bob Lee**](https://boblee.cn)
@@ -12,7 +12,7 @@ Author: [**Bob Lee**](https://boblee.cn)
 * [x] **As a command-line application 支持命令行应用模式**
 * [x] **As a python module 支持模块导入模式（import到你自己的项目里就能作API了）**
 * [x] **Foreign exchange selection 支持多种外汇币种同时输出（默认是英、欧、美、加、澳）**
-* [x] **Foreign exchange quotation filter 支持外汇牌价种类同时输出（买入、卖出、现钞、现汇）**
+* [x] **Foreign exchange quotation filter 支持外汇牌价种类同时输出（买入、卖出、现钞、现汇、中行折算价）**
 * [x] **Date selection (Realtime/History) 支持仅输出最新牌价 或 输出指定时间段内全部牌价变动**
 * [x] **Line graph generation 支持生成历史波动曲线**
 * [x] **.csv generation 支持导出csv格式表格文件**
@@ -70,18 +70,18 @@ If your `pip` links python3, please use `pip install bocfx` to install bocfx.
 ## 作为命令行工具使用
 
 ```
-❯ bocfx                        
-100%|████████████████████████████████████████████| 5/5 [00:00<00:00, 471.66it/s]
+❯ bocfx
 
-+-----+--------+--------+--------+--------+--------+---------------------+
-|  5  | SE_BID | BN_BID | SE_ASK | BN_ASK |BOC_CONV|         Time        |
-+-----+--------+--------+--------+--------+------------------------------+
-| GBP | 873.53 | 846.38 | 879.96 | 882.1  | 868.1  | 2019-02-25 09:25:37 |
-| EUR | 758.54 | 734.97 | 764.14 | 765.83 | 764.58 | 2019-02-25 09:25:37 |
-| USD | 669.44 | 663.99 | 672.28 | 672.28 | 690.54 | 2019-02-25 09:25:37 |
-| CAD | 509.1  | 493.03 | 512.86 | 514.1  | 506.72 | 2019-02-25 09:25:37 |
-| AUD | 476.19 | 461.4  | 479.69 | 480.87 | 458.88 | 2019-02-25 10:10:35 |
-+-----+--------+--------+--------+--------+--------+---------------------+
+
++-----+--------+--------+--------+--------+----------+---------------------+
+|  5  | SE_BID | BN_BID | SE_ASK | BN_ASK | BOC_CONV |         Time        |
++-----+--------+--------+--------+--------+----------+---------------------+
+| GBP | 873.01 | 845.88 | 879.44 | 883.32 |  874.54  | 2023-05-23 23:09:35 |
+| EUR | 757.61 | 734.07 | 763.19 | 765.65 |  760.31  | 2023-05-23 23:09:35 |
+| USD | 703.77 | 698.05 | 706.76 | 706.76 |  703.26  | 2023-05-23 23:09:35 |
+| CAD | 520.43 |  504   | 524.27 | 526.58 |  520.83  | 2023-05-23 23:09:35 |
+| AUD | 465.18 | 450.73 | 468.6  | 470.68 |  467.72  | 2023-05-23 23:09:35 |
++-----+--------+--------+--------+--------+----------+---------------------+
 (SE = Spot Exchange, BN = Banknote)
 ```
 
@@ -89,11 +89,11 @@ If your `pip` links python3, please use `pip install bocfx` to install bocfx.
 ❯ bocfx -f USD                
 
 
-+-----+--------+--------+--------+--------+--------+---------------------+
-|  1  | SE_BID | BN_BID | SE_ASK | BN_ASK |BOC_CONV|         Time        |
-+-----+--------+--------+--------+--------+--------+---------------------+
-| USD | 682.91 | 677.36 | 685.81 | 685.81 | 690.54 | 2020-09-06 10:30:00 |
-+-----+--------+--------+--------+--------+--------+---------------------+
++-----+--------+--------+--------+--------+----------+---------------------+
+|  1  | SE_BID | BN_BID | SE_ASK | BN_ASK | BOC_CONV |         Time        |
++-----+--------+--------+--------+--------+----------+---------------------+
+| USD | 703.77 | 698.05 | 706.76 | 706.76 |  703.26  | 2023-05-23 23:25:12 |
++-----+--------+--------+--------+--------+----------+---------------------+
 (SE = Spot Exchange, BN = Banknote)
 ```
 
@@ -107,10 +107,8 @@ If your `pip` links python3, please use `pip install bocfx` to install bocfx.
 >>> from bocfx import bocfx
 
 >>> output = bocfx('GBP,USD','SE,ASK') # 选择了英镑和美元，现汇卖出价
-100%|████████████████████████████████████████████| 5/5 [00:00<00:00, 532.87it/s]
-
 >>> output # The latest foreign exchange rate | 英镑和美元，现汇卖出价 (最新的牌价)
-['879.96', '672.28'] 
+['879.22', '706.76'] 
 ```
 <br>
 <br>
@@ -255,7 +253,7 @@ FX | ISO Code | Full Name | Alias
 `菲律宾比索` | `PHP` | Philippine Peso | 
 `泰国铢` | `THB` | Thai Baht | 
 `新西兰元` | `NZD` | New Zealand Dollar | `KIWI` 
-`韩元` | `WON` | South Korean Won | `SK` 
+`韩国元` | `WON` | South Korean Won | `SK` 
 `卢布` | `RUB` | Russian Ruble | `RU` 
 `林吉特` | `MYR` | Malaysia Ringgit | `SEN` 
 `新台币` | `NTD` | New Taiwan Dollar | `TW` 

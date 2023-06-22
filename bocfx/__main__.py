@@ -1,11 +1,8 @@
 #!/usr/bin/env python
 # coding: utf-8
 # Author: Bob Lee
-# Blog: https://boblee.cn
-# Version: 0.8.0
-# Date: 2023-05-24 00:12:05
 
-import getopt
+from getopt import getopt
 import sys
 import time as tm
 import os
@@ -17,6 +14,9 @@ from tqdm import tqdm
 import datetime
 import re
 
+VERSION = "0.8.1"
+LAST_MODIFY_TIME = "2023-06-22 13:52:05"
+
 def asexec():
     FX = 0
     sort = 0
@@ -24,13 +24,26 @@ def asexec():
     plot = 0
     csv = 0
     pt = 1
-    op = '~/bocfx_output'
+    op = os.path.join('~', 'bocfx_output')
     bar = 0
-    opts, args = getopt.getopt(sys.argv[1:],'hf:s:t:pco:b',['help','FX=','sort=','time=','plot','csv','op=', 'bar'])
+    try:
+        opts, args = getopt(sys.argv[1:], 'hf:s:t:pco:bv', ['help','FX=','sort=','time=','plot','csv','op=', 'bar', 'version'])
+    except:
+        print("option", sys.argv[1:], "not recognized!")
+        sys.exit()
 
     for opt, arg in opts:
         if opt in ('-h','--help'):
-            print("A python package for getting foreign exchange rate from Bank of China (BOC).\n\nbocfx [-f|--fx] [-s|--sort] [-t|--time] (-p|--plot) (-c|--csv) {-o|--op} (-b|--bar)\n\nExample:\nbocfx -f USD,EUR,GBP -s ASK,SE -t 7 -p -c -o '/User/root/newDir'\n\nFind detailed help: https://github.com/bobleer/bocfx")
+            print("A python package for getting foreign exchange rate from Bank of China(BOC).")
+            print("Version:", VERSION)
+            print("Last modify:", LAST_MODIFY_TIME)
+            print("")
+            print("Usage:\n    bocfx [-f|--fx] [-s|--sort] [-t|--time] (-p|--plot) (-c|--csv) {-o|--op} (-b|--bar)")
+            print("")
+            print("Example:\n    bocfx -f USD,EUR,GBP -s ASK,SE -t 7 -p -c -o '/User/root/newDir'")
+            print("")
+            print("Find detailed help: https://github.com/bobleer/bocfx")
+            print("")
             sys.exit()
 
         elif opt in ('-f','--FX'):
@@ -54,18 +67,23 @@ def asexec():
         elif opt in ('-b','--bar'):
             bar = 1
 
+        elif opt in ('-v','--version'):
+            print("Version:", VERSION)
+            print("Last modify:", LAST_MODIFY_TIME)
+            sys.exit()
+
     output = main(FX, sort, time, plot, csv, pt, op, bar)
     sys.exit() 
 
 
-def bocfx(FX=0, sort=0, time=-1, plot=0, csv=0, pt=0, op='~/bocfx_output', bar=0):
+def bocfx(FX=0, sort=0, time=-1, plot=0, csv=0, pt=0, op=os.path.join('~', 'bocfx_output'), bar=0):
     if FX in [None,""]: FX = 0
     if sort in [None,""]: sort = 0
     if time in [None,""]: time = -1
     if plot in [None,""]: plot = 0
     if csv in [None,""]: csv = 0
     if pt in [None,""]: pt = 0
-    if op in [None,""]: op = '~/bocfx_output'
+    if op in [None,""]: op = os.path.join('~', 'bocfx_output')
     if bar in [None,""]: bar = 0
     output = main(FX, sort, time, plot, csv, pt, op, bar)
     return output
@@ -76,9 +94,9 @@ def page_get(output, sort, FX_or, erectDate, nothing, FX, i, page, end):
     try:
         r = requests.post('https://srh.bankofchina.com/search/whpj/search_cn.jsp', data = {'erectDate':erectDate, 'nothing':nothing, 'pjname':str(FX[i]), 'page':str(page)})
     except:
-        print("Internet Error, waiting 2s.\n")
+        print("Internet Error, waiting 60s.\n")
         error_times += 1
-        tm.sleep(2)
+        tm.sleep(60)
         while error_times <= 3:
             r = requests.post('https://srh.bankofchina.com/search/whpj/search_cn.jsp', data = {'erectDate':erectDate, 'nothing':nothing, 'pjname':str(FX[i]), 'page':str(page)})
         else:
@@ -86,7 +104,7 @@ def page_get(output, sort, FX_or, erectDate, nothing, FX, i, page, end):
             exit()
 
     html = r.text
-    for row in range(2,end):
+    for row in range(2,end+2):
         try:
             SE_B = Selector(text=html).xpath('//tr[%i]/td[2]/text()' % (row)).extract()[0].strip('\r\n\t ')
             BN_B = Selector(text=html).xpath('//tr[%i]/td[3]/text()' % (row)).extract()[0].strip('\r\n\t ')
@@ -189,12 +207,16 @@ def main(FX, sort, time, plot, csv, pt, op, bar):
         for i in range(len(FX)):
             r = requests.post('https://srh.bankofchina.com/search/whpj/search_cn.jsp', data = {'erectDate':erectDate, 'nothing':nothing, 'pjname':FX[i], 'page':'1'})
             r = r.text
+            while "您的查询操作太频繁，请一分钟后再试。" in r:
+                tm.sleep(60)
+                r = requests.post('https://srh.bankofchina.com/search/whpj/search_cn.jsp', data = {'erectDate':erectDate, 'nothing':nothing, 'pjname':FX[i], 'page':'1'})
+                r = r.text
             searchOBJ = re.search(r'var m_nRecordCount = (.*);',r)
             pages = (int(searchOBJ.group(1))//20)+1
 
-            ex = ThreadPoolExecutor(max_workers=20)
+            ex = ThreadPoolExecutor(max_workers=1) # BOC 设置了查询频率，不建议放开多线程了
             for page in range(1,(pages+1)):
-                all_task.append(ex.submit(page_get, output, sort, FX_or, erectDate, nothing, FX, i, page, 22))
+                all_task.append(ex.submit(page_get, output, sort, FX_or, erectDate, nothing, FX, i, page, 20))
 
         [i.result() for i in show_prog(all_task, ifbar=bar)]
         ex.shutdown(wait=True)
@@ -203,8 +225,8 @@ def main(FX, sort, time, plot, csv, pt, op, bar):
         filename = '['+'+'.join(FX_or)+']'+'+'.join(output[0][1:-1])+'_'+erectDate+'_'+nothing
 
     else:
-        ex = ThreadPoolExecutor(max_workers=20)
-        all_task = [ex.submit(page_get, output, sort, FX_or, '', '', FX, i, '1', 3) for i in range(len(FX))]
+        ex = ThreadPoolExecutor(max_workers=1)
+        all_task = [ex.submit(page_get, output, sort, FX_or, '', '', FX, i, '1', 1) for i in range(len(FX))]
         [i.result() for i in show_prog(all_task, ifbar=bar)]
         ex.shutdown(wait=True)
         
@@ -237,12 +259,12 @@ def main(FX, sort, time, plot, csv, pt, op, bar):
         op = os.path.expanduser(op)
         if not os.path.exists(op):
             os.makedirs(op)
-        csvpath = os.path.join(op,filename)+'.csv'
+        csvpath = os.path.join(op, filename)+'.csv'
 
         with open(csvpath, 'w')  as f:
             for i in output:
                 f.write(','.join(map(str,i))+'\n')
-        print('\n.csv has already saved to '+csvpath)
+        print('\ncsv file has already saved to '+csvpath)
 
 
     if plot != 0:
@@ -266,10 +288,10 @@ def main(FX, sort, time, plot, csv, pt, op, bar):
         op = os.path.expanduser(op)
         if not os.path.exists(op):
             os.makedirs(op)
-        plotpath = os.path.join(op,filename)+'.png'
+        plotpath = os.path.join(op, filename)+'.png'
         
         plt.savefig(plotpath, dpi=150)
-        print('\nPlot has already saved to '+plotpath)
+        print('\nPlot file has already saved to '+plotpath)
         plt.show()
 
 

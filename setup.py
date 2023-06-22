@@ -5,7 +5,7 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name="bocfx",
-    version="0.8.0",
+    version="0.8.1",
     author="bobleer",
     author_email="liwenbo628@gmail.com",
     description="Easy API to get foreign exchange rate from Bank of China.",
